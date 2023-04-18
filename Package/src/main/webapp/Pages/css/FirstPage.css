@@ -1,0 +1,199 @@
+
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+        
+        .nex {
+            font-family: "NexonLv1Gothic";
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        li {
+            list-style: none;
+        }
+        em {
+            font-style: normal;
+        }
+        img {
+            vertical-align: top;
+        }
+        .ir_so {
+            overflow: hidden;
+            position: absolute;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+        .container {
+            width: 1160px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {
+            font-size: 50px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            line-height: 1;
+            text-align: center;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            margin-bottom: 70px;
+            line-height: 1.5;
+            color: #777;
+            text-align: center;
+        }
+        header{
+        	background-color: #ffffff;
+  			position: fixed;
+  			top: 0;
+  			left: 0;
+  			right: 0;
+		}
+       .header__inner{
+            width: 100%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #ccc;
+        }
+        .header__logo {
+            font-size: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            width: 20%;
+        }
+        .header__logo em {
+            font-size: 18px;
+            font-weight: 400;
+        }
+        .header__menu {
+            width: 60%;
+            text-align: center;
+        }
+        .header__menu li {
+            display: inline;
+        }
+        .header__menu li a {
+            padding: 13px 30px;
+            margin: 0 30px;
+            transition: background-color 0.33s;
+        }
+        .header__menu li a:hover {
+            background-color: #F1F1F1;
+            border-radius: 5px;
+        }
+        .header__member {
+            width: 20%;
+            text-align: right;
+        }
+        .header__member a {
+            font-size: 16px;
+            border: 1px solid #000;
+            padding: 10px 30px;
+            border-radius: 50px;
+            transition: background-color 0.33s;
+        } 
+        .header__member a:hover {
+           background-color: #F1F1F1;
+        } 
+        .card__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        .card {
+            width: 32%;
+            cursor: pointer;
+        }
+        .card:hover{
+        	animation:scale 2s infinite;
+            animation-direction:alternate;
+            
+        }
+        .card__header img {
+            width: 100%;
+        }
+        .card__body {
+            padding: 24px;
+            background: #f5f5f5;
+            text-align: left;
+        }
+        .card__body .title {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .card__body .desc {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #5b5b5b;
+            font-weight: 300;
+            margin-bottom: 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4; 
+            -webkit-box-orient: vertical;
+            word-break: keep-all;
+        }
+        .footer__menu {
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer__menu > div {
+            width: 16%;
+            text-align: left;
+        }
+        .footer__menu > div h3 {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        .footer__menu > div li a {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #777;
+            font-weight: 300;
+        }
+        .footer__right {
+            border-top: 1px solid #ccc;
+            margin-top: 50px;
+            padding-top: 50px;
+            text-align: center;
+        }
+        @keyframes scale{
+            0%{transform:scale(1);}
+            100%{transform:scale(0.7);}
+        }
+        #chat {
+ 	 		position: fixed;
+  			bottom: 20px;
+  			right: 20px;
+  			border: none;
+  			border-radius: 16px;
+  			background: royalblue;
+  			color: white;
+  			padding: 12px;
+  			font-weight: bold;
+  			font-size: 20px;
+  			box-shadow: 0px 5px 15px gray;
+  			cursor: pointer;
+		}
+		#chat:active{
+			background-color: blue;
+			animation:scale 2s infinite;
+            animation-direction:alternate;
+		}
+		

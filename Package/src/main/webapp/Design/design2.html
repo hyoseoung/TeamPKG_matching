@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배너 예제</title>
+    <style>
+        /* font */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+        
+        .gmarket {
+            font-family: 'GmarketSans';
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        li {
+            list-style: none;
+        }
+        em {
+            font-style: normal;
+        }
+        img {
+            vertical-align: top;
+        }
+        .ir_so {
+            overflow: hidden;
+            position: absolute;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {
+            font-size: 50px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            line-height: 1;
+            text-align: center;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            margin-bottom: 70px;
+            line-height: 1.5;
+            color: #777;
+            text-align: center;
+        }
+
+        /* bannerType */
+        .banner__wrap {
+            background-image: url(https://webstoryboy.github.io/web2022/webs_img/banner_bg01.jpg);
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .banner__inner {
+            text-align: center;
+            color: #fff;
+        }
+        .banner__title {
+            font-size: 50px;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+        .banner__desc {
+            font-size: 24px;
+            line-height: 1.5;
+            font-weight: 300;
+            margin-bottom: 70px;
+        }
+        .banner__desc a {
+            display: block;
+            font-size: 24px;
+            line-height: 1.5;
+            font-weight: 300;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 70px;
+        }
+        .banner__sub {
+            font-size: 16px;
+            font-weight: 300;
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+        
+    </style>
+    
+</head>
+<body>
+    <section id="bannerType" class="banner__wrap section gmarket">
+        <h2 class="ir_so">배너 영역</h2>
+        <div class="banner__inner">
+            <h3 class="banner__title">유튜버 웹보이</h3>
+            <p class="banner__desc">
+                더 다양한 강의는 유튜브를 통해 제공하고 있습니다.
+                <a href="#">youtube.com/c/Webstoryboy</a>
+            </p>
+            <span class="banner__sub">배너 영역01</span>
+        </div>
+    </section>
+    <!-- //bannerType -->
+</body>
+</html>

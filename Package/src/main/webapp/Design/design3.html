@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 유형01</title>
+    <link rel="stylesheet" type="text/css" href="./css/fir.css">
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        em {
+            font-style: normal;
+        }
+
+        /* headerType */
+        .header__inner {
+            width: 100%;
+            height: 70px;
+            background-color: #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        .header__logo {
+            font-size: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .header__logo em {
+            font-size: 18px;
+            font-weight: 400;
+        }
+		
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        .blind {
+            width: 0;
+            height: 0;
+            line-height: 0;
+            overflow: hidden;
+            position: absolute;
+            text-indent: -9999px;
+        }
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        /* sliderType */
+        .slider {
+            position: relative;
+        }
+        .slider__img {
+            background: url(img/slider_bg01.jpg) no-repeat center center / cover;
+        }
+        .slider__img .desc {
+            width: 1160px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+        .slider__img .desc span {
+            font-size: 16px;
+            background-color: #fff;
+            padding: 1px 14px 0 14px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        .slider__img .desc h3 {
+            font-size: 110px;
+            font-weight: 300;
+            line-height: 1;
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            margin-left: -8px;
+        }
+        .slider__img .desc p {
+            font-size: 20px;
+            font-weight: 300;
+            color: #fff;
+            line-height: 1.35;
+            margin-bottom: 130px;
+        }
+        .slider__img .desc .btn a {
+            font-size: 16px;
+            background: #fff;
+            padding: 11px 50px;
+            display: inline-block;
+        }
+        .slider__img .desc .btn a.black {
+            background: #000;
+            color: #fff;
+        }
+        .slider__arrow a {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 56px;
+            background-image: url(img/slider_icon.svg);
+        }
+        .slider__arrow a.left {
+            left: 20px;
+        }
+        .slider__arrow a.right {
+            right: 20px;
+            background-position: -50px 0;
+        }
+        .slider__dot {
+            position: absolute;
+            left: 50%;
+            bottom: 25px;
+            transform: translateX(-50%);
+        }
+        .slider__dot a {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-image: url(img/slider_icon.svg);
+            background-position: -20px -70px;
+        }
+        .slider__dot a.active {
+            background-position: 0px -70px;
+        }
+        .slider__dot a.play {
+            background-position: -40px -70px;
+        }
+        .slider__dot a.stop {
+            background-position: -60px -70px;
+        }
+        
+    </style>
+    
+</head>
+<body>
+	
+    <section id="sliderType" class="slider__wrap nexon">
+        <h2 class="blind">슬라이드 유형</h2>
+        <div class="slider__inner">
+            <div class="slider">
+                <div class="slider__img">
+                    <div class="desc">
+                        <span>developer</span>
+                        <h3>new frontend</h3>
+                        <p>
+                            너무 무리하지 말아요! 이미 당신은 잘하고 있고!<br />
+                            앞으로도 잘 할 수 있어요!
+                        </p>
+                        <div class="btn">
+                            <a href="/">자세히 보기</a>
+                            <a href="/" class="black">사이트 보기</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider__arrow">
+                    <a href="/" class="left"><span class="ir">이전 이미지</span></a>
+                    <a href="/" class="right"><span class="ir">다음 이미지</span></a>
+                </div>
+                <div class="slider__dot">
+                    <a href="/" class="dot active"><span class="ir">1</span></a>
+                    <a href="/" class="dot"><span class="ir">2</span></a>
+                    <a href="/" class="dot"><span class="ir">3</span></a>
+                    <a href="/" class="play"><span class="ir">플레이</span></a>
+                    <a href="/" class="stop"><span class="ir">정지</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
