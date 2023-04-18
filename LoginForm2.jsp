@@ -9,7 +9,7 @@
 </head>
 <body align="center">
 	<!--<jsp:include page="../common/Top.jsp" />-->
-	<h2>로그인</h2>
+	
 
 	<form action="LoginProcess.jsp" method="post">
 		<%--아아디 패스워드 입력받아 'LP'페이지로 POST방식으로 전송 --%>
