@@ -85,7 +85,7 @@
              <br>
         </td>
     </tr>
-    <tr align="center">
+    <!-- <tr align="center">
         <td>
             Frontend
         </td>
@@ -101,7 +101,7 @@
                 <td>
             Backend
         </td>
-    </tr>
+    </tr> -->
 </table>
 
 ## 🛠 기술 스택
