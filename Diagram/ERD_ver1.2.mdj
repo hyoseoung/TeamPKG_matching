@@ -159,6 +159,21 @@
 										},
 										{
 											"_type": "ERDColumnView",
+											"_id": "AAAAAAGHkyHMysr1sbs=",
+											"_parent": {
+												"$ref": "AAAAAAGHjVI91qTOJAY="
+											},
+											"model": {
+												"$ref": "AAAAAAGHkyHMwsry07M="
+											},
+											"font": "Arial;13;0",
+											"left": 461,
+											"top": 845,
+											"width": 207,
+											"height": 13
+										},
+										{
+											"_type": "ERDColumnView",
 											"_id": "AAAAAAGHjZZmdKT5ldY=",
 											"_parent": {
 												"$ref": "AAAAAAGHjVI91qTOJAY="
@@ -168,7 +183,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 461,
-											"top": 845,
+											"top": 860,
 											"width": 207,
 											"height": 13
 										},
@@ -183,7 +198,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 461,
-											"top": 860,
+											"top": 875,
 											"width": 207,
 											"height": 13
 										},
@@ -214,7 +229,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 461,
-											"top": 875,
+											"top": 890,
 											"width": 207,
 											"height": 13
 										}
@@ -223,7 +238,7 @@
 									"left": 456,
 									"top": 735,
 									"width": 217,
-									"height": 158
+									"height": 173
 								}
 							],
 							"font": "Arial;13;0",
@@ -1985,6 +2000,15 @@
 								"$ref": "AAAAAAGHjVI91qTKADk="
 							},
 							"name": "성별",
+							"length": 0
+						},
+						{
+							"_type": "ERDColumn",
+							"_id": "AAAAAAGHkyHMwsry07M=",
+							"_parent": {
+								"$ref": "AAAAAAGHjVI91qTKADk="
+							},
+							"name": "숙련도",
 							"length": 0
 						},
 						{

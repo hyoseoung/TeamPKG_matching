@@ -1,0 +1,81 @@
+회원 테이블 MEMBER
+PK 회원번호(Sequence) M_ID
+이름 M_NAME
+생일 M_BIRTH
+숙련도 M_LEV
+성별 M_GEN
+핸드폰 번호 P_NUMBER
+이메일주소 EMAIL
+닉네임 NICKNAME
+비밀번호 PASSWORD
+FK 계정 타입 일련번호 mtypeId
+잔여 포인트 POINT
+가입 일자 SBSCR_DATE
+
+회원 계정 타입 테이블 TYPE
+PK 계정 타입 일련번호 M_TYPECODE
+계정 타입명 M_TYPENAME
+권한(1,2) ACRT
+
+출석 포인트 테이블 AT_POINT
+PK 포인트 기록 일련 번호 PNT_SR
+FK 회원 번호 M_ID
+출석 시간 ATNDN_TIME
+
+결제 테이블 PAYMENT
+PK 결제 일련 번호 PYMNT_SR
+FK 회원 번호 M_ID
+결제 금액 PRICE
+결제 시간 PYMNT_TIME
+
+
+경기 기록 테이블 MATCH
+PK 경기 기록 일련번호 MTC_SR
+FK구장 일련번호 STD_ID
+FK참여 대표자 일련번호 AT_MEM
+경기 시작 시간 MTC_ST_TIME
+경기 끝 시간 MTC_EN_TIME 
+FK 이긴 대표자 일련번호 VI_MEM 
+(참여 대표자 일련번호와 비교하여 일치하면 '승' 불일치 시 '패')
+경기 결과 SCORE ( >>  VARCHAR 'x : y' 로 기록)
+
+
+
+광역시 테이블 LOCATION
+PK 광역시 일련번호 LCT_ID
+광역시명 LCT_NAME
+
+지역 테이블 AREA
+PK 지역 일련번호 AR_ID
+지역명 AR_NAME
+FK 광역시 일련번호 LCT_ID
+
+
+동 테이블 PLACE
+PK 동 일련번호 PL_ID
+동 명 PL_NAME
+FK 지역 일련번호 AR_ID
+
+구장 테이블 STARDIUM
+PK 구장 일련번호 STD_ID
+구장명 STD_NAME
+FK 동 일련번호 PL_ID
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
