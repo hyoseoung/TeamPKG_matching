@@ -9,8 +9,26 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
   <context-param>
 	  <param-name>Oracle</param-name>
 	  <param-value></param-value>
   </context-param>
+  
+  
+  <!-- request 인코딩 설정 -->
+  <filter>
+  	<filter-name>SetCharEncoding</filter-name>
+  	<filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+  	<init-param>
+  		<param-name>encoding</param-name>
+  		<param-value>utf-8</param-value>
+  	</init-param>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>SetCharEncoding</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
 </web-app>

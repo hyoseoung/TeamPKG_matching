@@ -39,18 +39,7 @@
 </head>
 
 <body>
-	<header>
-		<!-- img 태그로 로고 -->
-		<h2>관리자 페이지</h2>
-		<!-- 관리자 프로필 -->
-	</header>
-	
-	<nav>
-		<h4>관리자 메뉴</h4>
-		<a href="#">회원 정보</a>
-	</nav>
-	
-	
+	<jsp:include page="./AdminHeader.jsp" />
 	 
 	<form method="get">
 	<!--
