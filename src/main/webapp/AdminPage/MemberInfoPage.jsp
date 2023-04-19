@@ -42,7 +42,7 @@
 		<span>닉네임: </span> <input type="text" name="nickname" value="${dto.nickName}" /> <br>
 		<span>패스워드: </span> <input type="text" name="password" value="${dto.password}" required /> <br>
 		<span>이메일 주소: </span> <input type="text" name="email" value="${dto.email}" required /> <br>
-		<span>연락처: </span> <input type="text" name="phoneNumber" value="${dto.phoneNumber}" required /> <br>
+		<span>연락처: </span> <input type="text" name="phoneNum" value="${dto.phoneNumber}" required /> <br>
 		<span>성별: </span> <input type="text" name="gender" value="${dto.gender}" /> <br>
 		<span>숙련도: </span> <input type="text" name="level" value="${dto.level}" /> <br>
 		<span>가입일: ${dto.regDate}</span> <br>
@@ -56,13 +56,13 @@
 		
 		<div id="banSetting">
 			<span>계정 정지 설정</span> <br>
-			<input type="radio" name="ban" value="doBan"> 정지하기
-			<input type="radio" name="ban" value="notBan"> 정지하지 않기
+			<input type="radio" name="ban" value="doBan" /> 정지하기
+			<input type="radio" name="ban" value="notBan" checked /> 정지하지 않기
 		</div>
 
-		<div id="setBanDate">
-			<label for="startBan">정지 시작일: </label> <input type="date" name="startBan">
-			<label for="endBan">정지 종료일: </label> <input type="date" name="endBan">
+		<div id="setBanDate" style="display: none;">
+			<label for="startBan">정지 시작일: </label>  <input type="date" name="startBan" />
+			<label for="endBan">정지 종료일: </label>  <input type="date" name="endBan" />
 		</div>
 
 		<br>
@@ -82,7 +82,7 @@
 		else if (notBan.checked === true) {
 			bandateDiv.style.display = 'none';
 		}
-		console.log(startBan.disable);
+		
 	});
 </script>
 

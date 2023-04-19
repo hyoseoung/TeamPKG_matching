@@ -24,6 +24,7 @@ public class AdminPageContoller extends HttpServlet {
 		
 		Map<String, Object> param = new HashMap<>();
 		
+		// 검색어와 검색할 항목
 		String searchType = req.getParameter("searchType");
 		String searchValue = req.getParameter("searchValue");
 		if (searchValue != null) {
@@ -31,8 +32,10 @@ public class AdminPageContoller extends HttpServlet {
 			param.put("searchValue", searchValue);
 		}
 		
+		// 회원 목록 불러오기
 		List<MemberDTO> memberList = dao.getMemberList(param);
 		
+		// 요청 속성에 값을 설정하고 보내기
 		req.setAttribute("memberList", memberList);
 		req.setAttribute("param", param);
 		req.getRequestDispatcher("/AdminPage/AdminMainPage.jsp").forward(req, resp);
