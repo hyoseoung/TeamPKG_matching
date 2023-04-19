@@ -42,9 +42,10 @@
 	
 	
 	<form method="get">
-		<table border="1" style="width:90%;">
+		<table border="1">
 			<tr>
 				<td align="center">
+					<button type="button">Excel 파일로 다운로드</button>
 					<select name="searchType">
 						<option value="M_id">회원 번호</option>
 						<option value="M_name">회원 이름</option>
@@ -80,7 +81,7 @@
 		<c:choose>
 			<c:when test="${empty memberList}">
 				<tr>
-					<td colspan="8" align="center">등록된 게시물이 없습니다.</td>
+					<td colspan="9" align="center">등록된 게시물이 없습니다.</td>
 				</tr>
 			</c:when>
 			<c:otherwise>

@@ -48,8 +48,8 @@
 	<span>성별: ${dto.gender}</span><br>
 	<span>숙련도: ${dto.level}</span><br>
 	<span>가입일: ${dto.regDate}</span><br>
-	<span>최근 접속일: ${dto.lastLoginDate}</span><br>
-	<span>계정 상태: ${dto}</span><br> <!-- 정지된 계정인지 아닌지 보여줌 -->
+	<!-- <span>최근 접속일: ${dto.lastLoginDate}</span><br>
+	<span>계정 상태: ${dto.isBanned}</span><br> --> <!-- 정지된 계정인지 아닌지 보여줌 -->
 	
 </body>
 </html>
