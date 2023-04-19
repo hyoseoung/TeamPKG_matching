@@ -12,12 +12,16 @@
 	header {
 		background-color: greenyellow;
 		height: 100px;
+		text-align: center;
+		line-height: 100px
 	}
 	
 	nav {
 		width: 200px;
 		height: 500px;
 		float: left;
+		border: 1px solid gray;
+		margin-right: 20px;
 	}
 	
 	table {
@@ -48,8 +52,8 @@
 	<span>성별: ${dto.gender}</span><br>
 	<span>숙련도: ${dto.level}</span><br>
 	<span>가입일: ${dto.regDate}</span><br>
-	<span>최근 접속일: ${dto.lastLoginDate}</span><br>
-	<span>계정 상태: ${dto}</span><br> <!-- 정지된 계정인지 아닌지 보여줌 -->
+	<%-- <span>최근 접속일: ${dto.lastLoginDate}</span><br>
+	<span>계정 상태: ${dto.isBanned}</span><br> --%> <!-- 정지된 계정인지 아닌지 보여줌 -->
 	
 </body>
 </html>
