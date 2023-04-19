@@ -51,15 +51,17 @@
 		전화번호
 	</div>
 	<div style="float: left; text-align: left; margin-left: 5px; width: 40%">
-		<input type="text" name="email" size="10"/> @ <input type="text" name="email" size="15" required />
-		<input type="submit" value="중복확인" id="button" required /> <br>
-		<input type="password" name="password" required /> <br>
-		<input type="password" name="password" required /> <br>
-		<input type="text" name="name" size="10" required /> <br>
-		<input type="date" name="birth" required /> <br>
-		<input type="text" name="phone" class="tel" maxlength="13" placeholder="숫자만 입력하세요.(-제외)" required />
-		<input type="submit" value="인증하기" id="button" /> <br><br><br>
-		<input type="button" value="NEXT" id="button" onclick="location='SignUp2.jsp'"/>
+		<form action="../SignUp/SignUpController.do">
+			<input type="text" name="email" size="10"/> @ <input type="text" name="email" size="15" required />
+			<input type="submit" value="중복확인" id="button" required /> <br>
+			<input type="password" name="password" required /> <br>
+			<input type="password" name="password" required /> <br>
+			<input type="text" name="name" size="10" required /> <br>
+			<input type="date" name="birth" required /> <br>
+			<input type="text" name="phone" class="tel" maxlength="13" placeholder="숫자만 입력하세요.(-제외)" required />
+			<input type="submit" value="인증하기" id="button" /> <br><br><br>
+			<input type="button" value="NEXT" id="button" onclick="location='SignUp2.jsp'"/>
+		</form>
 	</div>
 </body>
 </html>
