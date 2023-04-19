@@ -28,7 +28,7 @@
             oncomplete: function(data) {
                 var addr = data.address; // 최종 주소 변수
 
-
+      
                 // 주소로 상세 정보를 검색
                 geocoder.addressSearch(data.address, function(results, status) {
                     // 정상적으로 검색이 완료됐으면
