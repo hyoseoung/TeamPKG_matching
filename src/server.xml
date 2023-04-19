@@ -37,7 +37,7 @@
          UserDatabaseRealm to authenticate users
     -->
     <Resource auth="Container" description="User database that can be updated and saved" factory="org.apache.catalina.users.MemoryUserDatabaseFactory" name="UserDatabase" pathname="conf/tomcat-users.xml" type="org.apache.catalina.UserDatabase"/>
-  	<Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" initialSize="0" maxIdle="20" maxTotal="20" maxWaitMillis="5000" minIdle="5" name="oracleSource" password="3520" type="javax.sql.DataSource" url="jdbc:oracle:thin:@192.168.0.28:1521:xe" username="dev"/>
+  	<Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" initialSize="0" maxIdle="20" maxTotal="20" maxWaitMillis="5000" minIdle="5" name="oracleSource" password="1234" type="javax.sql.DataSource" url="jdbc:oracle:thin:@192.168.0.28:1521:xe" username="dev"/>
   </GlobalNamingResources>
 
   
