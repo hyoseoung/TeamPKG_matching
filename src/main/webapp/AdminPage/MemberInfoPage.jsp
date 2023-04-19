@@ -41,14 +41,13 @@
 	
 	<h2>${dto.memberName} 회원의 정보</h2>
 	<span>회원 번호: ${dto.memberId}</span><br>
-	<span>닉네임: ${dto.nickname}</span><br>
-	<span>이메일 주소: ${dto.emailAddr}</span><br>
-	<span>연락처: ${dto.telNum}</span><br>
+	<span>닉네임: ${dto.nickName}</span><br>
 	<span>패스워드: ${dto.password}</span><br>
-	<span>생년월일: ${dto.birthdate}</span><br>
+	<span>이메일 주소: ${dto.email}</span><br>
+	<span>연락처: ${dto.phoneNumber}</span><br>
 	<span>성별: ${dto.gender}</span><br>
 	<span>숙련도: ${dto.level}</span><br>
-	<span>가입일: ${dto.regdate}</span><br>
+	<span>가입일: ${dto.regDate}</span><br>
 	<span>최근 접속일: ${dto.lastLoginDate}</span><br>
 	<span>계정 상태: ${dto}</span><br> <!-- 정지된 계정인지 아닌지 보여줌 -->
 	

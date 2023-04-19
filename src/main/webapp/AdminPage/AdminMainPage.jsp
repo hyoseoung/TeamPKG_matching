@@ -38,18 +38,44 @@
 		<h4>관리자 메뉴</h4>
 		<a href="#">회원 정보</a>
 	</nav>
+	
+	
+	
+	<form method="get">
+		<table border="1" style="width:90%;">
+			<tr>
+				<td align="center">
+					<select name="searchType">
+						<option value="M_id">회원 번호</option>
+						<option value="M_name">회원 이름</option>
+						<option value="nickname">닉네임</option>
+						<option value="email">이메일 주소</option>
+						<option value="P_number">연락처</option>
+						<option value="reg_date">가입일</option>
+						<option value="">최근 접속일</option>
+						<option value="">계정 정지 여부</option>
+					</select>
+					<input type="search" name="searchValue" value="${map.searchValue}" />
+					<input type="submit" value="검색" />
+				</td>
+			</tr>
+		</table>
+	</form>
+	
 
 	<h3>회원 목록</h3>
+<form action="#">
 	<table border="1">
 		<tr>
+			<td></td>
 			<td>회원 번호</td>
 			<td>회원 이름</td>
 			<td>닉네임</td>
 			<td>이메일 주소</td>
 			<td>연락처</td>
-			<td>패스워드</td>
 			<td>가입일</td>
 			<td>최근 접속일</td>
+			<td>계정 정지 여부</td>
 		</tr>
 		<c:choose>
 			<c:when test="${empty memberList}">
@@ -58,23 +84,28 @@
 				</tr>
 			</c:when>
 			<c:otherwise>
-				<c:forEach items="${memberList}" var="list" varStatus="stat">
+				<c:forEach items="${memberList}" var="member" varStatus="stat">
 				<tr align="center">
 					<td>
-						<a href="#">${list.memberId}</a>
+						<input type="checkbox" name="selectedMember" value="${member.memberId}">
 					</td>
-					<td>${list.memberName}</td>
-					<td>${list.nickname}</td>
-					<td>${list.emailAddr}</td>
-					<td>${list.telNum}</td>
-					<td>${list.password}</td>
-					<td>${list.regdate}</td>
-					<td>${list.lastLoginDate}</td>
+					<td>
+						<a href="#">${member.memberId}</a>
+					</td>
+					<td>${member.memberName}</td>
+					<td>${member.nickName}</td>
+					<td>${member.email}</td>
+					<td>${member.phoneNumber}</td>
+					<td>${member.password}</td>
+					<td>${member.regDate}</td>
+					<td>${member.lastLoginDate}</td>
+					<td>${member.isBanned}</td>
 				</tr>
 				</c:forEach>
 			</c:otherwise>
 		</c:choose>
 	</table>
+</form>
 	
 	<footer></footer>
 
