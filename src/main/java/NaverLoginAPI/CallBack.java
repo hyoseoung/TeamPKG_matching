@@ -19,7 +19,7 @@ public class CallBack {
 	    String code = request.getParameter("code");
 	    String state = request.getParameter("state");
 	    String redirectURI="";
-		try {redirectURI = URLEncoder.encode("http://localhost:8081/Package/Pages/FirstPage.jsp", "UTF-8");}catch(UnsupportedEncodingException e) {e.printStackTrace();}
+		try {redirectURI = URLEncoder.encode("http://localhost:8081/Package/Matching/matchingwaitpage.jsp", "UTF-8");}catch(UnsupportedEncodingException e) {e.printStackTrace();}
 	    apiURL = "https://nid.naver.com/oauth2.0/token?grant_type=authorization_code&";
 	    apiURL += "client_id=" + clientId;
 	    apiURL += "&client_secret=" + clientSecret;
