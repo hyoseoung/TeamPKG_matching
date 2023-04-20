@@ -36,3 +36,4 @@ public class SignUpController extends HttpServlet {
 		}
 	}
 }
+}

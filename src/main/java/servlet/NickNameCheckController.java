@@ -1,33 +1,23 @@
 package servlet;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import common.ConnectDB;
 import member.MemberDAO;
 import member.MemberDTO;
 
-@WebServlet("/SignUp/EmailCheckController.do")
-public class EmailCheckController extends HttpServlet {
+/**
+ * Servlet implementation class NickNameCheckController
+ */
+@WebServlet("/NickNameCheckController")
+public class NickNameCheckController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String value = req.getParameter("value");
-		MemberDTO dto = new MemberDAO().getMember(value,0);
-		if(dto == null) {
-		resp.getWriter().print("true");
-		req.getSession().setAttribute("statement", 1);
-		}
-		else {
-			resp.getWriter().print("false");
-			req.getSession().setAttribute("statement", 0);
-		}
-	}
-		String value = req.getParameter("email");
+		String value = req.getParameter("nickName");
 		MemberDTO dto = new MemberDAO().getMember(value,0);
 		if(dto == null) 
 			resp.getWriter().print(0);
@@ -35,4 +25,5 @@ public class EmailCheckController extends HttpServlet {
 			
 		
 	}
+
 }
