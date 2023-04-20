@@ -23,7 +23,7 @@ public class MemberInfoController extends HttpServlet {
 		String emailAddr = req.getParameter("email");
 		
 		// 이메일 주소로 회원을 찾아서 가져옴
-		MemberDTO dto = dao.getMember(emailAddr);
+		MemberDTO dto = dao.getMember(emailAddr,0);
 		dao.close();
 		
 		// 회원 정보를 요청에 저장하고 보내기
