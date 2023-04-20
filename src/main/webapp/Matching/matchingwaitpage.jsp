@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="member.MemberDTO" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,12 +65,13 @@
 </style>	
 </head>
 <body>
+		<h2>${client.memberName}</h2>
 	<header>
 		<!-- 로고 이미지 -->
 		<img src="logo.png" alt="로고 이미지">
 		<div class="header">
 		<!-- 현재 매칭 중인 팀원 수 -->
-		<p align="center">현재매칭중인 팀원수: <%= request.getAttribute("teamCount") %></p>
+		<p align="center">현재매칭중인 팀원수: ${teamCount}</p>
 		</div>
 	</header>
 
@@ -76,34 +79,26 @@
 		<!-- 중앙에 큰 원안에 이미지 삽입 -->
 		<div style="text-align: center;">
 			<div style="display: inline-block; border: 5px solid black; border-radius: 50%; padding: 20px;">
-				<img src="../Title/img/i15009557230.jpg" alt="팀 이미지">
+				<img src="team-image.png" alt="팀 이미지">
 			</div>
 			<!-- 팀을 찾기 위해 매칭 중 -->
 			<p>팀을 찾기위해 매칭중</p>
 			<!-- 현재 대기시간 -->
-			<p>현재 대기시간: <%= request.getAttribute("waitTime") %>초</p>
+			<p>현재 대기시간:  ${waitTime}초</p>
 		</div>
 	</main>
 	
 	<footer>
 		<!-- 매칭 취소 버튼 -->
-		<button type="submit"  onclick='cancell()'>매칭 취소</button>
-		
+		<button type="submit" onclick="location.href='cancel.jsp'">매칭 취소</button>
 	</footer>
 	
 	<div class="bottom">
    	<form>
-   		<input type="submit" onclick="#" id="문의사항" value="문의사항">
-   		<input type="submit" onclick="#" id="고객센터" value="고객센터">
-   		<input type="submit" onclick="#" id="챗봇" value="챗봇안내">
+   		<input type="submit" id="문의사항" value="문의사항">
+   		<input type="submit" id="고객센터" value="고객센터">
+   		<input type="submit" id="챗봇" value="챗봇안내">
    	</form>
 </div>
-<script>
-function cancell() {
-	if (confirm("매칭을 취소하시겠습니까?")) {
-	    window.location.href = "../Title/TitleMain.jsp";
-	}
-}
-</script>
 </body>
 </html>

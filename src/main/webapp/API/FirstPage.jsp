@@ -21,7 +21,7 @@
                 </ul>
             </nav>
             <div class="header__member">
-                <a id="login_btn" href="SecondPage.jsp">로그인</a>
+                <a id="login_btn" href="LoginPage.jsp">로그인</a>
             </div>
         </div>
     </header>
