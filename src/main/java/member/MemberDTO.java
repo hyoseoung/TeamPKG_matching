@@ -14,11 +14,10 @@ public class MemberDTO {
 	String gender;
 	String level;
 	String birth;
-	
 	public String getMemberId() {
 		return memberId;
 	}
-	public void setMemberId(String memberId) {
+	public void setMemberId(String memberId){
 		this.memberId = memberId;
 	}
 	public String getMemberName() {
