@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri ="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -98,47 +99,42 @@ height:300px;
 <form action="../servlet/title.do" method="post" name="titleForm">
 <header class="login-section" style="inline">
 	<div>
-		<% if (session.getAttribute("userId") == null) { %>
-    	<a href="../Login/LoginForm1.jsp">로그인</a>
-    	<a href="../SignUp/SignUp.jsp">회원가입</a>
-  		<% } else { %>
-    	<span><%= session.getAttribute("userId") %>님</span>
-    	<a href="logout.jsp">로그아웃</a>
-    	<a href="changeMemberckeck1.01.jsp">개인정보 변경</a>
-  		<% } %>	
+		<c:if test="${empty dto}" >
+		<span>로그인이 필요합니다</span>
+    		<a href="../Login/LoginForm1.jsp">로그인</a>
+    		<a href="../SignUp/SignUp.jsp">회원가입</a>
+    	</c:if>
+    	<c:if test="${not empty dto}">
+    		<span>${dto.memberName}님</span>
+    		<a href="../Logout/LogoutController.do">로그아웃</a>
+    		<a href="../CheckAuth/changeMemberckeck.jsp">개인정보 변경</a>
+    	</c:if>	
 	</div>
 </header>
 <main>
   <div class = "container">
        <div class="main-view">
           <ul>
-            <li><img src="./img/i13493601463.png " width="35%" /></li>
-            <li><img src="./img/i15009557230.jpg"width="70%"/></li>
-            <li><img src="./img/i15452929240.jpg"width="50%"/></li>
-          </ul>
+            <li><img src="../img/i13493601463.png " width="20%" /></li>
+            <li><img src="../img/i15009557230.jpg"width="60%"/></li>
+            <li><img src="../img/i15452929240.jpg"width="40%"/></li>
+          </ul><!-- 35 70 50 -->
         </div>
  	</div>
-
 	<section class="calendar">
-		<form>
 			<div class="time-select">
 				<label for="Datetime">시간대 선택</label>	
         		<input type="date" id="Datetime" name="Date" value="" ><br>
 				<select id="Datetime">
-					<option value="10~11">오전 10시~오전 11시</option>
-					<option value="11~12">오전 11시~오후 12시</option>
-					<option value="12~13">오후 12시~오후 1시</option>
-					<option value="13~14">오전 1시~오후 2시</option>
-					<option value="14">오후 2시~오후 3시</option>
-					<option value="15">오후 3시~오후 4시</option>
-					<option value="16">오후 4시~오후 5시</option>
-					<option value="17">오후 5시~오후 6시</option>
-					<option value="18">오후 6시~오후 7시</option>
-					<option value="19">오후 7시~오후 8시</option>
-					<option value="20">오후 8시~오후 9시</option>
-					<option value="21">오후 9시~오후 10시</option>
-					<option value="22">오후 10시~오후 11시</option>
-					<option value="23">오후 11시~오후 12시</option>
+					<option value="A">오전 6시~오전 8시</option>
+					<option value="B">오전 8시~오전 10시</option>
+					<option value="C">오후 10시~오후 12시</option>
+					<option value="D">오후 12시~오후 2시</option>
+					<option value="E">오후 2시~오후 4시</option>
+					<option value="F">오후 4시~오후 6시</option>
+					<option value="G">오후 6시~오후 8시</option>
+					<option value="H">오후 8시~오후 10시</option>
+					<option value="I">오후 10시~오전 12시</option>
 				</select>
 			<div class="attendees">
 				<label for="attendee-count">참여 인원</label>
@@ -148,7 +144,6 @@ height:300px;
 				<p id="selected-time"></p>
 			</div>
 			<button type="submit" id="start-matching" onclick="startMatching">매칭 시작</button>
-		</form>
 	</section>
 </main>
 	<script src="script.js">
@@ -158,8 +153,8 @@ height:300px;
 		  var pw = "";
 
 		  // 로그인 여부를 확인합니다.
-		  if (checkLogin(id, pw)) {
-		    window.location.href = "../Maching/machingwaitpage.jsp";
+		  if (sessionStorage.getItem("dto")) {
+		    window.location.href = "../Matching/matchingpage.jsp";
 		  } else {
 		    // 로그인하지 않은 경우 로그인 페이지로 이동합니다.
 		    window.location.href = "../Login/LoginForm1.jsp";

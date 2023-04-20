@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>배치완료 수락 대기 페이지</title>
+	<title>매칭 실패 페이지</title>
 <style>
 /* 인증 확인 버튼 스타일 */
 	button[type="submit"] {
@@ -80,19 +80,22 @@
 		<!-- 중앙에 큰 원안에 이미지 삽입 -->
 		<div style="text-align: center;">
 			<div style="display: inline-block; border: 5px solid black; border-radius: 50%; padding: 20px;">
-				<img src="../Title/img/i15009557230.jpg" alt="팀 이미지">
+				<img src="../img/i15009557230.jpg" alt="팀 이미지">
 			</div>
-			<!-- 팀을 찾기 위해 매칭 중 -->
-			<h2>다른 플레이어의 수락을 대기중입니다.</h2>
-			<!-- 현재 대기시간 -->
-			<p>현재 수락한 인원을 나타내면 좋을 칸</p>
+			<!-- 팀을 찾지 못하거나 예외상황발생 -->
+			<h2>해당 지역에서의 매칭이 실패하였습니다.<br>
+				재 매칭을 원하신다면 다시 시도를 클릭<br>
+				조건을 변경하여 매칭을 워하신다면 
+				돌아가기를 클릭</h2>
+
 		</div>
 	</main>
 	
-	<div style="display: flex; justify-content: center; align-items: center; width: 100%;">
-		<!-- 매칭 취소 버튼 -->
-		<button type="submit" style="display: flex; justify-content: center; align-items: center;" class=bu onclick='cancell()'>매칭 거절</button>
+	<div style="text-align: center;">
+  		<button type="submit" style="display: inline-block; margin-right: 30%;" onclick="remaching()">다시 시도</button>
+  		<button type="submit" style="display: inline-block;" onclick="returnpage()">돌아가기</button>
 	</div>
+	
 	<div class="bottom">
    	<form>
    		<input type="submit" onclick="#" id="문의사항" value="문의사항">
@@ -101,8 +104,13 @@
    	</form>
 </div>
 <script>
-function cancell() {
-	if (confirm("매칭을 거절하시겠습니까?")) {
+function remaching() {
+	if (confirm("매칭을 다시 시도하시겠습니까?")) {
+	    window.location.href = "./machingpage.jsp";
+	}
+}
+function returnpage() {
+	if (confirm("메인화면으로 돌아가시겠습니까?")) {
 	    window.location.href = "../Title/TitleMain.jsp";
 	}
 }
