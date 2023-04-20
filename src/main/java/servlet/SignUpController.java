@@ -11,44 +11,29 @@ import javax.websocket.Session;
 
 import member.MemberDAO;
 import member.MemberDTO;
+import util.AlertFunction;
 
-/**
- * Servlet implementation class SignUpController
- */
+
 @SuppressWarnings("serial")
 @WebServlet("/SignUp/SignUpController.do")
 public class SignUpController extends HttpServlet {
-
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-
-	}
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
-		MemberDTO dto = new MemberDTO();
-		dto.setPassword(request.getParameter("password"));
-		dto.setMemberName(request.getParameter("name"));
-		dto.setEmail(request.getParameter("email"));
-		dto.setBirth(request.getParameter("birth"));
-		dto.setPhoneNumber(request.getParameter("pNum"));
-		dto.setGender(request.getParameter("gender"));
-		dto.setNickName(request.getParameter("nickname"));
-		dto.setMemberTypeId("1");
-		dto.setLevel("하");
-		new MemberDAO().insertMember(dto);
-		request.setAttribute("dto",dto);
-		request.getRequestDispatcher("../SignUp/SignUp2.jsp").forward(request, resp);
+		if(Integer.parseInt(request.getSession().getAttribute("statement").toString())==1) {
+			MemberDTO dto = new MemberDTO();
+			dto.setPassword(request.getParameter("password"));
+			dto.setMemberName(request.getParameter("name"));
+			dto.setEmail(request.getParameter("email"));
+			dto.setBirth(request.getParameter("birth"));
+			dto.setPhoneNumber(request.getParameter("pNum"));
+			dto.setGender(request.getParameter("gender"));
+			dto.setMemberTypeId("0");
+			new MemberDAO().insertMember(dto);
+			request.getSession().setAttribute("dto",dto);
+			resp.sendRedirect("../SignUp/SignUp2.jsp");
+		} else {
+			AlertFunction.alertBack(resp, "이메일 중복확인을 해주세요.");
+		}
 	}
-	
-	public void storeInfo(MemberDTO dto) {
-		
-	}
-	
-	
-	
-	//회원가입 끝날때 removeAttribute
-	
-	
-
+}
 }

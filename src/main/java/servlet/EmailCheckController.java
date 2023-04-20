@@ -16,6 +16,17 @@ import member.MemberDTO;
 public class EmailCheckController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String value = req.getParameter("value");
+		MemberDTO dto = new MemberDAO().getMember(value,0);
+		if(dto == null) {
+		resp.getWriter().print("true");
+		req.getSession().setAttribute("statement", 1);
+		}
+		else {
+			resp.getWriter().print("false");
+			req.getSession().setAttribute("statement", 0);
+		}
+	}
 		String value = req.getParameter("email");
 		MemberDTO dto = new MemberDAO().getMember(value,0);
 		if(dto == null) 
@@ -24,13 +35,4 @@ public class EmailCheckController extends HttpServlet {
 			
 		
 	}
-	
-	/*protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String col = req.getParameter("mode");
-		String value = req.getParameter("email)
-		
-		MemberDTO dto = new MemberDTO();
-		
-		dto = new
-	   }*/
 }
