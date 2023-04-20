@@ -1,9 +1,6 @@
 package member;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 import common.ConnectDB;
 
@@ -14,7 +11,7 @@ public class MemberDAO extends ConnectDB {
 	public int insertMember(MemberDTO member) {
 		String sql = "insert into MEMBER"
 				+ "	(M_ID,M_NAME,M_BIRTH,M_LEVEL,M_GENDER,P_NUMBER,EMAIL,NICKNAME,PASSWORD,M_TYPECODE,REG_DATE) "
-				+ " values(SEQ_MEMBER_NUM.NEXTVAL,?,?,?,?,?,?,?,?,?,SYSDATE)";
+				+ " values(SEQ_MEMBER_NUM.NEXTVAL,?,?,?,?,?,?,SEQ_MEMBER_NUM.NEXTVAL,?,?,SYSDATE)";
 		try {
 			psmt = con.prepareStatement(sql);
 			psmt.setString(1, member.getMemberName());
@@ -23,9 +20,8 @@ public class MemberDAO extends ConnectDB {
 			psmt.setString(4, member.getGender());
 			psmt.setString(5, member.getPhoneNumber());
 			psmt.setString(6, member.getEmail());
-			psmt.setString(7, member.getNickName());
-			psmt.setString(8, member.getPassword());
-			psmt.setString(9, member.getMemberTypeId());
+			psmt.setString(7, member.getPassword());
+			psmt.setString(8, member.getMemberTypeId());
 			return psmt.executeUpdate();
 		}catch(Exception e) {
 			System.out.println("회원가입 중 오류");
@@ -33,30 +29,7 @@ public class MemberDAO extends ConnectDB {
 		}
 		return 0;
 	}
-	
-	public boolean DuplCheck (String col, String value) {
-		boolean isRight = false;
-		try {
-			String query = "select count(*) from member where "
-					+ col
-					+ " =?";
-			psmt = con.prepareStatement(query);
-			psmt.setString(1, value);
-			rs=psmt.executeQuery();
-			rs.next();
-			if(rs.getInt(1)==0) {
-				isRight=true;
-				System.out.println("사용가능한 "+col+" 입니다.");
-			} else {
-				System.out.println("중복된 "+col+" 입니다.");
-			}
-		} catch(Exception e) {
-			isRight = false;
-			System.out.println("오류가 발생했습니다.");
-			e.printStackTrace();
-		}
-		return isRight;
-	}
+
 	
 	public MemberDTO getMember(String id,int type) {
 	      String sql="select * from member where email=? and m_typecode=?";
