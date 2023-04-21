@@ -74,15 +74,14 @@ public class MemberDAO extends ConnectDB {
 			//query += "where ? like '%?%' ";
 		}
 		query += "order by m_id desc"
-			+ ")";
-			//+ " where pnum between ? and ?";
+			+ ") where pnum between ? and ?";
 		
 		try {
 			psmt = con.prepareStatement(query);
 //			psmt.setString(1, param.get("searchType").toString());
 //			psmt.setString(2, param.get("searchValue").toString());
-//			psmt.setString(3, param.get("start").toString());
-//			psmt.setString(4, param.get("end").toString());
+			psmt.setString(1, param.get("start").toString());
+			psmt.setString(2, param.get("end").toString());
 			rs = psmt.executeQuery();
 			
 			while(rs.next()) {
@@ -151,4 +150,26 @@ public class MemberDAO extends ConnectDB {
 		
 		return res;
 	}
+	
+	public int countMember(Map<String, Object> param) {
+		int totalCount = 0;
+		
+		String query = "select count(*) from member";
+		if (param.get("searchValue") != null) {
+			query += " where "+param.get("searchType")+" like '%"+param.get("searchValue")+"%' ";
+		}
+		
+		try {
+			psmt = con.prepareStatement(query);
+			rs = psmt.executeQuery();
+			rs.next();
+			totalCount = rs.getInt(1);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return totalCount;
+	}
+	
 }
