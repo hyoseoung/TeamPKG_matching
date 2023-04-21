@@ -1,55 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri ="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 	<title>매칭 서비스</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+	<link rel="stylesheet" href="css/FirstPage.css" type="text/css">
 <style type="text/css">
-header {
-	padding: 50px;
-	background-color: #5BB551;
-	color: white;
-	text-align: center;
-	    
-}
-a {
-  display: block;
-  text-align: center;
-  margin: .25rem;
-  padding: .5rem 1rem;
-  text-decoration: none;
-  font-weight: bold;
-  color: white;
-  background: teal;
-  float: right;
-}
-
-main {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-}
-div{	
-	line-height: 30px;
-}
-.calendar {
-	width: 30%;
-}
-
-.time-select {
-	margin-bottom: 30px;
-}
-
-.attendees {
-	margin-bottom: 20px;
-}
-.login-section{
-margin-bottom: 30px
-}
  .main-view{
       margin:  auto;
       margin-bottom: 20px;
@@ -63,12 +21,12 @@ margin-bottom: 20px
 }
 
 .main-view ul{
-width:calc(100% * 3);
+width:calc(100% * 5);
 display:flex;
 animation:slide 13s infinite;} /* slide를 13초동안 진행하며 무한반복 함 */
 
 .main-view li{
-width:calc(100% / 3);
+width:calc(100% / 5);
 height:300px;
 }
     
@@ -95,50 +53,65 @@ height:300px;
 
 </head>
 <body>
-<form action="../servlet/title.do" method="post" name="titleForm">
-<header class="login-section" style="inline">
-	<div>
-		<% if (session.getAttribute("userId") == null) { %>
-    	<a href="../Login/LoginForm1.jsp">로그인</a>
-    	<a href="../SignUp/SignUp.jsp">회원가입</a>
-  		<% } else { %>
-    	<span><%= session.getAttribute("userId") %>님</span>
-    	<a href="logout.jsp">로그아웃</a>
-    	<a href="changeMemberckeck1.01.jsp">개인정보 변경</a>
-  		<% } %>	
+<form>
+<header id="headerType" class="header__wrap nexon fix">
+	<div class="header__inner">
+        <div class="header__logo">
+            <a href="#">Plap <em>football</em></a>
+        </div>
+        <nav class="header__menu">
+            <ul>
+                <li><a href="#">Starter</a></li>
+                <li><a href="#">Middle Class</a></li>
+                <li><a href="#">Challenger</a></li>
+            </ul>
+        </nav>
+		<div class="header__member">
+			<c:if test="${empty dto}" >
+			<span>로그인이 필요합니다</span>
+	    		<a id="login_btn" href="../Login/LoginForm1.jsp">로그인</a>
+	    		<a id="login_btn" href="../SignUp/SignUp.jsp">회원가입</a>
+	    	</c:if>
+	    	<c:if test="${not empty dto}">
+	    		<span>${dto.memberName}님</span>
+	    		<a href="../Logout/LogoutController.do">로그아웃</a>
+	    		<a href="../CheckAuth/changeMemberckeck.jsp">개인정보 변경</a>
+	    	</c:if>	
+		</div>
 	</div>
 </header>
-<main>
-  <div class = "container">
+
+
+
+<section id="cardType" class="card__wrap section nex">
+	<h2>풋살 매칭 시스템</h2>
+ 	<p>풋살 모여서 시작하기 어려우신 분들을 위한! 서비스<br></p>
        <div class="main-view">
           <ul>
-            <li><img src="./img/i13493601463.png " width="35%" /></li>
-            <li><img src="./img/i15009557230.jpg"width="70%"/></li>
-            <li><img src="./img/i15452929240.jpg"width="50%"/></li>
-          </ul>
+            <li><img src="../img/backgroundImage.jpg " width="70%" /></li>
+            <li><img src="../img/google.png" width="50%"/></li>
+            <li><img src="../img/soccer.jpg" width="40%"/></li>
+            <li><img src="../img/soccer2.jpg" width="50%"/></li>
+            <li><img src="../img/soccer3.jpg" width="50%"/></li>
+          </ul><!-- 35 70 50 -->
         </div>
- 	</div>
+</section>
+
 
 	<section class="calendar">
-		<form>
 			<div class="time-select">
 				<label for="Datetime">시간대 선택</label>	
         		<input type="date" id="Datetime" name="Date" value="" ><br>
 				<select id="Datetime">
-					<option value="10~11">오전 10시~오전 11시</option>
-					<option value="11~12">오전 11시~오후 12시</option>
-					<option value="12~13">오후 12시~오후 1시</option>
-					<option value="13~14">오전 1시~오후 2시</option>
-					<option value="14">오후 2시~오후 3시</option>
-					<option value="15">오후 3시~오후 4시</option>
-					<option value="16">오후 4시~오후 5시</option>
-					<option value="17">오후 5시~오후 6시</option>
-					<option value="18">오후 6시~오후 7시</option>
-					<option value="19">오후 7시~오후 8시</option>
-					<option value="20">오후 8시~오후 9시</option>
-					<option value="21">오후 9시~오후 10시</option>
-					<option value="22">오후 10시~오후 11시</option>
-					<option value="23">오후 11시~오후 12시</option>
+					<option value="A">오전 6시~오전 8시</option>
+					<option value="B">오전 8시~오전 10시</option>
+					<option value="C">오후 10시~오후 12시</option>
+					<option value="D">오후 12시~오후 2시</option>
+					<option value="E">오후 2시~오후 4시</option>
+					<option value="F">오후 4시~오후 6시</option>
+					<option value="G">오후 6시~오후 8시</option>
+					<option value="H">오후 8시~오후 10시</option>
+					<option value="I">오후 10시~오전 12시</option>
 				</select>
 			<div class="attendees">
 				<label for="attendee-count">참여 인원</label>
@@ -148,9 +121,43 @@ height:300px;
 				<p id="selected-time"></p>
 			</div>
 			<button type="submit" id="start-matching" onclick="startMatching">매칭 시작</button>
-		</form>
 	</section>
-</main>
+<button id="chat">고객 문의</button>
+    <footer id="footerType" class="footer__wrap section gmarket gray">
+        <h2 class="ir_so">푸터 영역</h2>
+        <div class="footer__inner container">
+            <div class="footer__menu">
+                <div>
+                    <h3>Package Team</h3>
+                </div>
+                <div>
+                    <h3>Team Leader</h3>
+                    <ul>
+                        <li><a href="#">이효성</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Other IT Majors</h3>
+                    <ul>
+                        <li><a href="#">공승환</a></li>
+                        <li><a href="#">임유진</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Team members</h3>
+                    <ul>                        
+                        <li><a href="#">김선명</a></li>
+                        <li><a href="#">김종호</a></li>
+                        <li><a href="#">김준현</a></li>
+                        <li><a href="#">양선영</a></li>
+                    </ul>
+                </div>
+            </div>
+            <address class="footer__right">
+                ©2023 Package Team!
+            </address>
+        </div>
+    </footer>
 	<script src="script.js">
 	function startMatching() {
 		 // 계정 정보를 받아옵니다.
@@ -158,8 +165,8 @@ height:300px;
 		  var pw = "";
 
 		  // 로그인 여부를 확인합니다.
-		  if (checkLogin(id, pw)) {
-		    window.location.href = "../Maching/machingwaitpage.jsp";
+		  if (sessionStorage.getItem("dto")) {
+		    window.location.href = "../Matching/matchingpage.jsp";
 		  } else {
 		    // 로그인하지 않은 경우 로그인 페이지로 이동합니다.
 		    window.location.href = "../Login/LoginForm1.jsp";

@@ -28,7 +28,6 @@
             oncomplete: function(data) {
                 var addr = data.address; // 최종 주소 변수
 
-
                 // 주소로 상세 정보를 검색
                 geocoder.addressSearch(data.address, function(results, status) {
                     // 정상적으로 검색이 완료됐으면
@@ -38,6 +37,7 @@
 
                         // 해당 주소에 대한 좌표를 받아서
                         var coords = new daum.maps.LatLng(result.y, result.x);
+
                         // 지도를 보여준다.
                         mapContainer.style.display = "block";
                         map.relayout();
@@ -45,6 +45,7 @@
                         map.setCenter(coords);
                         // 마커를 결과값으로 받은 위치로 옮긴다.
                         marker.setPosition(coords)
+
                     }
                 });
             }
