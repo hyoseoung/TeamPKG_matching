@@ -41,8 +41,7 @@
 	<h2 style="display: inline-block;">${dto.memberName} 회원의 정보</h2>&emsp;
 	<button type="button" id="modify1"
 		onclick="location.href='../MatchGetIt/MemberEditPage.do?email=${dto.email}&emailType=${dto.memberTypeId}&mode=edit';">수정하기</button>
-	<button type="button" id="modify2"
-		onclick="confirmDelete()">삭제하기</button>
+	<button type="button" id="modify2" onclick="confirmDelete()">삭제하기</button>
 	<br>
 	
 	<span>회원 번호: ${dto.memberId}</span><br>
@@ -63,7 +62,7 @@
 		let res = confirm('삭제하시겠습니까? (삭제하면 되돌릴 수 없습니다.)');
 		
 		if (res === true)
-		location.href='../MatchGetIt/MemberEditPage.do?email=${dto.email}&emailType=${dto.memberTypeId}&mode=delete';
+		location.href = '../MatchGetIt/MemberEditPage.do?email=${dto.email}&emailType=${dto.memberTypeId}&mode=delete';
 	}
 </script>
 
