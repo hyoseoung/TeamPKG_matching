@@ -1,6 +1,6 @@
 package member;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class MemberDTO {
 	String memberId;
@@ -14,6 +14,7 @@ public class MemberDTO {
 	String gender;
 	String level;
 	String birth;
+	
 	public String getMemberId() {
 		return memberId;
 	}
