@@ -23,12 +23,12 @@
 		border: 1px solid gray;
 		margin-right: 20px;
 	}
-	
+
 	table {
 		width: 50%;
 		border-collapse: collapse;
 	}
-	
+
 	#search {
 		width: 50%;
 		display: flex;
@@ -42,28 +42,6 @@
 	<jsp:include page="./AdminHeader.jsp" />
 	 
 	<form method="get">
-	<!--
-		<table border="1" id="search">
-			<tr>
-				<td><button type="button">Excel 파일로 다운로드</button></td>
-				<td align="center">
-					<select name="searchType">
-						<option value="M_id">회원 번호</option>
-						<option value="M_name">회원 이름</option>
-						<option value="nickname">닉네임</option>
-						<option value="email">이메일 주소</option>
-						<option value="P_number">연락처</option>
-						<option value="reg_date">가입일</option>
-						<option value="">최근 접속일</option>
-						<option value="">계정 정지 여부</option>
-					</select>
-					<input type="search" name="searchValue" value="${map.searchValue}" />
-					<input type="submit" value="검색" />
-				</td>
-			</tr>
-		</table>
-	 -->
-	
 	<div id="search">
 		<button type="button">Excel 파일로 다운로드</button>
 		<div>
@@ -85,7 +63,7 @@
 	
 
 	<h3>회원 목록</h3>
-<form action="#">
+<form method="post" onsubmit="return checkbox(this);">
 	<table border="1">
 		<tr>
 			<td></td>
@@ -111,7 +89,8 @@
 						<input type="checkbox" name="selectedMember" value="${member.memberId}">
 					</td>
 					<td>
-						<a href="../MatchGetIt/MemberInfoPage.do?email=${member.email}">${member.memberId}</a>
+						<a href="../MatchGetIt/MemberInfoPage.do
+						?email=${member.email}&emailType=${member.memberTypeId}">${member.memberId}</a>
 					</td>
 					<td>${member.memberName}</td>
 					<td>${member.nickName}</td>
@@ -126,9 +105,23 @@
 			</c:otherwise>
 		</c:choose>
 	</table>
+
+	<button type="submit">선택한 회원 삭제하기</button>
 </form>
 	
-	<footer></footer>
+<script>
+	function checkbox(form) {
+		let selectedMember = document.querySelectorAll('input[type="checkbox"]:checked');
+		//console.log(selectedMember);
+		
+		if (selectedMember.length == 0) {
+			alert('선택한 회원이 없습니다.');
+			return false;
+		}
+
+		return confirm(selectedMember.length+"명의 회원을 삭제하시겠습니까? (삭제하면 되돌릴 수 없습니다.)");
+	}
+</script>
 
 </body>
 </html>
