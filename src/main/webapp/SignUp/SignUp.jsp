@@ -5,6 +5,37 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입 기본정보 페이지</title>
+<link rel="stylesheet" href="css/SignUp.css" type="text/css">
+<style type="text/css">
+ .main-view{
+      margin:  auto;
+      margin-bottom: 20px;
+      margin-top: 50px;
+    text-align: center;
+}
+.main-view{
+height:500px;
+overflow:hidden; 
+margin-bottom: 20px
+}
+
+
+
+.main-view li{
+width:calc(100% / 5);
+height:300px;
+}
+    
+.time-select{
+	style="float: left"; 
+	text-align: left;
+	
+}
+.attendees{
+	text-align: right;
+}
+
+</style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 	function emailDuplCheck() {
@@ -20,6 +51,7 @@
 					alert("사용 가능한 이메일입니다.");
 					$("input[name='email']").attr('readonly', true);
 				} else if(data =="false"){
+					alert("중복된 이메일입니다.");
 				}else alert("서버 오류가 발생하였습니다.");
 			},
 			error: function() {
@@ -28,12 +60,27 @@
 		});
 	};
 	
-	const hypenTel = (target) => {
-		 target.value = target.value
-		   .replace(/[^0-9]/g, '')
-		   .replace(/^(\d{2,3})(\d{3,4})(\d{4})$/, `$1-$2-$3`);
-	}
-	
+	function pNumberDuplCheck() {
+		var phoneNumber = $("input[name='phoneNumber']").val();
+		var data="";
+		$.ajax({
+			url: "../SignUp/PNumCheckController.do",
+			data: { "value": phoneNumber},
+			type: "post",
+			success: function(result) {
+				data=result;
+				if(data =="true") {
+					alert("사용 가능한 번호입니다.");
+					$("input[name='phoneNumber']").attr('readonly', true);
+				} else if(data =="false"){
+					alert("중복된 번호입니다.");
+				}else alert("서버 오류가 발생하였습니다.");
+			},
+			error: function() {
+				alert("서버 오류가 발생하였습니다.");
+			}
+		});
+	};
 
 </script>
 <style type="text/css">
@@ -70,6 +117,20 @@
    }
 </style>
 </head>
+<header id="headerType" class="header__wrap nexon fix">
+   <div class="header__inner">
+        <div class="header__logo">
+            <a href="#">Match <em>Get It!</em></a>
+        </div>
+        <nav class="header__menu" style="width: 55%">
+            <ul>
+                <li><a href="../Board/List.jsp">Board</a></li>
+                <li><a href="#">Challenger</a></li>
+            </ul>
+        </nav>
+     
+   </div>
+</header>
 <body>
 	<h2>Sign Up</h2>
 	<h1 align="center" style="background-color: #ADFF2F;">기본 정보 입력</h1> <br><br>
@@ -82,13 +143,14 @@
 		성별 <br>
 	</div>
 	<div style="float: left; text-align: left; margin-left: 5px; width: 40%">
-		<form action="../SignUp/SignUpController.do" method="get">
+		<form action="../SignUp/SignUpController.do" method="get" style="width: 500px;">
 			<input type="email" name="email" size="20" id="email" required />
 			<input type="button" value="중복 확인" onclick="emailDuplCheck()"> <br>
 			<input type="password" name="password" placeholder="8자리 이상 입력해주세요." pattern="^([a-z0-9_]){6,50}$" required /> <br>
 			<input type="text" name="name" size="10" required /> <br>
 			<input type="date" name="birth" required /> <br>
-			<input type="tel" name="pNum" class="tel" maxlength="13" placeholder="ex)010-1234-5678" oninput="hypenTel(this)" required /><br>
+			<input type="tel" name="phoneNumber" class="tel" maxlength="13" placeholder="ex)010-1234-5678" pattern="/^(\d{2,3})(\d{3,4})(\d{4})$" required />
+			<input type="button" value="중복 확인" onclick="pNumberDuplCheck()"> <br>
 			<label>
                   <input type="radio" name="gender" value="남" />
                   <span>남</span>
