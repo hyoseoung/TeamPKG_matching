@@ -22,7 +22,7 @@ public class LoginController extends HttpServlet {
 		if(dto!=null) {	
 				if(pw.equals(dto.getPassword())){
 					request.getSession().setAttribute("dto", dto); //기존 세션 기능!
-					response.sendRedirect("../Matching/matchingwaitpage.jsp"); //maching >> matching 철자 틀림
+					response.sendRedirect("../Title/TitleMain.jsp"); //maching >> matching 철자 틀림
 					return;
 				}else {
 					AlertFunction.alertBack(response, "로그인 정보가 틀립니다");

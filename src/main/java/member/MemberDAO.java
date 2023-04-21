@@ -1,6 +1,9 @@
 package member;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 import common.ConnectDB;
 
@@ -103,4 +106,40 @@ public class MemberDAO extends ConnectDB {
 		
 		return list;
 	}
+	
+	public boolean checkPass(String password, String email) {
+	       boolean result = false;
+	       try {
+	           String sql = "SELECT * FROM MEMBER WHERE EMAIL = ? AND PASSWORD = ?";
+	           psmt = con.prepareStatement(sql);
+	           psmt.setString(1, email);
+	           psmt.setString(2, password);
+	           rs = psmt.executeQuery();
+	           if (rs.next()) {
+	               result = true;
+	           }
+	       } catch (Exception e) {
+	           e.printStackTrace();
+	       }
+	       return result;
+	   }
+	   
+	   public int updateInfo(MemberDTO dto) {
+	      int result = 0;
+	      try {
+	         String sql = "UPDATE MEMBER SET M_NAME = ?, NICKNAME = ?, PASSWORD = ?, P_NUMBER = ?, M_LEVEL = ? WHERE EMAIL = ?";
+	         psmt=con.prepareStatement(sql);
+	           psmt.setString(1, dto.getMemberName());
+	           psmt.setString(2, dto.getNickName());
+	           psmt.setString(3, dto.getPassword());
+	           psmt.setString(4, dto.getPhoneNumber());
+	           psmt.setString(5, dto.getLevel());
+	           psmt.setString(6, dto.getEmail());
+	           result = psmt.executeUpdate();
+	      } catch (Exception e) {
+	         System.out.println("업데이트 중 오류");
+	         e.printStackTrace();
+	      }
+	      return result;      
+	   }
 }

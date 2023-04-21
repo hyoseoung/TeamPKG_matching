@@ -28,12 +28,14 @@ public class SignUpController extends HttpServlet {
 			dto.setPhoneNumber(request.getParameter("pNum"));
 			dto.setGender(request.getParameter("gender"));
 			dto.setMemberTypeId("0");
-			new MemberDAO().insertMember(dto);
+			MemberDAO dao= new MemberDAO();
+			dao.insertMember(dto);
 			request.getSession().setAttribute("dto",dto);
 			resp.sendRedirect("../SignUp/SignUp2.jsp");
+			dao.close();
 		} else {
 			AlertFunction.alertBack(resp, "이메일 중복확인을 해주세요.");
 		}
 	}
 }
-}
+

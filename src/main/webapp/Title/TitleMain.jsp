@@ -6,29 +6,34 @@
 <head>
 <meta charset="UTF-8">
 	<title>매칭 서비스</title>
-	<link rel="stylesheet" href="css/FirstPage.css" type="text/css">
+	<link rel="stylesheet" href="css/MainPage.css" type="text/css">
 <style type="text/css">
- .main-view{
-      margin:  auto;
-      margin-bottom: 20px;
-      margin-top: 50px;
-    text-align: center;
-}
-.main-view{
-height:500px;
-overflow:hidden; 
-margin-bottom: 20px
-}
-
-.main-view ul{
-width:calc(100% * 5);
-display:flex;
-animation:slide 13s infinite;} /* slide를 13초동안 진행하며 무한반복 함 */
-
-.main-view li{
-width:calc(100% / 5);
-height:300px;
-}
+	.main-view{
+		margin:  auto;
+		margin-bottom: 20px;
+		margin-top: 50px;
+		text-align: conter;
+		height: 50%;
+		width: 50%;
+		overflow: hidden;
+ 
+		}
+		.main-view ul{
+		width:calc(100% * 5);
+		display:flex;
+		animation:slide 13s infinite; /* slide를 13초동안 진행하며 무한반복 함 */
+		text-align: left;
+		}
+		.main-view img{
+		width:100%;
+		}
+		
+		.main-view li{
+		width:calc(100% / 5);
+		width:30%;
+		height:25%;
+		
+		}
     
 @keyframes slide {
       0% {margin-left:0;} /* 0 ~ 10  : 정지 */
@@ -39,15 +44,9 @@ height:300px;
       60% {margin-left:-200%;}
       100% {margin-left:0;}
     }
-.time-select{
-	style="float: left"; 
-	text-align: left;
-	
+.calendar{
+text-align: right;border-bottom-right-radius: 5px;
 }
-.attendees{
-	text-align: right;
-}
-
 </style>
 
 
@@ -57,19 +56,19 @@ height:300px;
 <header id="headerType" class="header__wrap nexon fix">
 	<div class="header__inner">
         <div class="header__logo">
-            <a href="#">Plap <em>football</em></a>
+            <a href="#">Match <em>Get It!</em></a>
         </div>
-        <nav class="header__menu">
+        <nav class="header__menu" style="width: 55%">
             <ul>
-                <li><a href="#">Starter</a></li>
-                <li><a href="#">Middle Class</a></li>
+                <li><a href="../Board/List.jsp">Board</a></li>
+                <li><a href="#">Nocitice</a></li>
                 <li><a href="#">Challenger</a></li>
             </ul>
         </nav>
 		<div class="header__member">
 			<c:if test="${empty dto}" >
 			<span>로그인이 필요합니다</span>
-	    		<a id="login_btn" href="../Login/LoginForm1.jsp">로그인</a>
+	    		<a id="login_btn" href="../Login/LoginForm.jsp">로그인</a>
 	    		<a id="login_btn" href="../SignUp/SignUp.jsp">회원가입</a>
 	    	</c:if>
 	    	<c:if test="${not empty dto}">
@@ -82,24 +81,18 @@ height:300px;
 </header>
 
 
+<div class="matching">
 
-<section id="cardType" class="card__wrap section nex">
-	<h2>풋살 매칭 시스템</h2>
- 	<p>풋살 모여서 시작하기 어려우신 분들을 위한! 서비스<br></p>
-       <div class="main-view">
-          <ul>
-            <li><img src="../img/backgroundImage.jpg " width="70%" /></li>
-            <li><img src="../img/google.png" width="50%"/></li>
-            <li><img src="../img/soccer.jpg" width="40%"/></li>
-            <li><img src="../img/soccer2.jpg" width="50%"/></li>
-            <li><img src="../img/soccer3.jpg" width="50%"/></li>
-          </ul><!-- 35 70 50 -->
-        </div>
-</section>
-
-
-	<section class="calendar">
-			<div class="time-select">
+	<section  class="card__wrap section nex" >
+		<h2>풋살 매칭 시스템</h2>
+	 	<p>풋살 모여서 시작하기 어려우신 분들을 위한! 서비스<br></p>
+	</section>
+	
+	
+	
+	
+	<section class="calendar"  style="font-size: 20px; margin: 50px 60px;">
+			<div class="time-select" style="margin-top: 2px" >
 				<label for="Datetime">시간대 선택</label>	
         		<input type="date" id="Datetime" name="Date" value="" ><br>
 				<select id="Datetime">
@@ -113,15 +106,28 @@ height:300px;
 					<option value="H">오후 8시~오후 10시</option>
 					<option value="I">오후 10시~오전 12시</option>
 				</select>
-			<div class="attendees">
-				<label for="attendee-count">참여 인원</label>
-				<input type="number" id="attendee-count" min="1" max="6" value="1">
-				<p id="selected-attendee"></p>
+				<div class="attendees" style="font-size: 20px;">
+					<label for="attendee-count" >참여 인원</label>
+					<input type="number" id="attendee-count" min="1" max="6" value="1">
+				</div>
+			<button type="submit" onclick="startMatching" >매칭 시작</button>
+	        </div>
+	       <div class="main-view">
+	          <ul >
+	            <li><img src="../img/backgroundImage.jpg " width="100%" /></li>
+	            <li><img src="../img/google.png" width="100%"/></li>
+	            <li><img src="../img/soccer.jpg" width="100%"/></li>
+	            <li><img src="../img/soccer2.jpg" width="100%"/></li>
+	            <li><img src="../img/soccer3.jpg" width="100%"/></li>
+	          </ul><!-- 35 70 50 -->
 			</div>
-				<p id="selected-time"></p>
-			</div>
-			<button type="submit" id="start-matching" onclick="startMatching">매칭 시작</button>
 	</section>
+	
+
+	
+</div>
+
+	
 <button id="chat">고객 문의</button>
     <footer id="footerType" class="footer__wrap section gmarket gray">
         <h2 class="ir_so">푸터 영역</h2>

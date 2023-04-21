@@ -39,9 +39,9 @@
     	<h1>회원 정보 수정</h1>
 </div>
 <div class="form-container">
-    	<form>
+    	<form action="../servlet/PassController.do" method="post">
         	<label for="email">이메일:</label>
-        	<input type="text" id="email" name="email" value="" readonly><br>
+        	<input type="text" id="email" name="email" value="${dto.email}" readonly><br>
         	<label for="password">비밀번호:</label>
         	<input type="password" id="password" name="password" placeholder="비밀번호"><br>
 	        <input type="submit" value="계정 인증 확인"/>
