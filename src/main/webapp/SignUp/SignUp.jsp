@@ -6,36 +6,7 @@
 <meta charset="UTF-8">
 <title>회원가입 기본정보 페이지</title>
 <link rel="stylesheet" href="css/SignUp.css" type="text/css">
-<style type="text/css">
- .main-view{
-      margin:  auto;
-      margin-bottom: 20px;
-      margin-top: 50px;
-    text-align: center;
-}
-.main-view{
-height:500px;
-overflow:hidden; 
-margin-bottom: 20px
-}
 
-
-
-.main-view li{
-width:calc(100% / 5);
-height:300px;
-}
-    
-.time-select{
-	style="float: left"; 
-	text-align: left;
-	
-}
-.attendees{
-	text-align: right;
-}
-
-</style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 	function emailDuplCheck() {
@@ -87,6 +58,7 @@ height:300px;
 	div{
 		
 		line-height: 30px;
+		font-family: "NexonLv1Gothic";
 	}
 	botton:hover {
 		transition: 0.7s;
@@ -107,12 +79,13 @@ height:300px;
       transform: scale(0.98);
       box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
     }
-     input[type="text"], input[type="email"],input[type="password"] {
+     input[type="text"], input[type="email"],input[type="password"],input[type="tel"],input[type="date"] {
       padding: 5px;
       margin: 5px 0;
       border: 1px solid #ccc;
       border-radius: 4px;
       box-sizing: border-box;
+      font-family: "NexonLv1Gothic";
       
    }
 </style>
@@ -133,7 +106,7 @@ height:300px;
 </header>
 <body>
 	<h2>Sign Up</h2>
-	<h1 align="center" style="background-color: #ADFF2F;">기본 정보 입력</h1> <br><br>
+	<h1 align="center" style="background-color: #ADFF2F;font-family: NexonLv1Gothic">기본 정보 입력</h1> <br><br>
 	<div style="float: left; text-align: right;width: 40%; margin-right: 20px;line-height: 36px ">
 		이메일 <br>
 		비밀번호 <br>
@@ -145,14 +118,14 @@ height:300px;
 	<div style="float: left; text-align: left; margin-left: 5px; width: 40%">
 		<form action="../SignUp/SignUpController.do" method="get" style="width: 500px;">
 			<input type="email" name="email" size="20" id="email" required />
-			<input type="button" value="중복 확인" onclick="emailDuplCheck()"> <br>
+			<input type="button" value="중복 확인" id="button" onclick="emailDuplCheck()" style="font-family: NexonLv1Gothic"> <br>
 			<input type="password" name="password" placeholder="8자리 이상 입력해주세요." pattern="^([a-z0-9_]){6,50}$" required /> <br>
 			<input type="text" name="name" size="10" required /> <br>
 			<input type="date" name="birth" required /> <br>
 			<input type="tel" name="phoneNumber" class="tel" maxlength="13" placeholder="ex)010-1234-5678" pattern="/^(\d{2,3})(\d{3,4})(\d{4})$" required />
-			<input type="button" value="중복 확인" onclick="pNumberDuplCheck()"> <br>
+			<input type="button" id="button" value="중복 확인" onclick="pNumberDuplCheck()" style="font-family: NexonLv1Gothic"> <br>
 			<label>
-                  <input type="radio" name="gender" value="남" />
+                  <input type="radio" name="gender" value="남" checked="checked"/>
                   <span>남</span>
             </label> 
             <label>
