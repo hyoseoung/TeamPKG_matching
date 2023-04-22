@@ -25,10 +25,9 @@ public class SignUpController extends HttpServlet {
 			dto.setMemberName(request.getParameter("name"));
 			dto.setEmail(request.getParameter("email"));
 			dto.setBirth(request.getParameter("birth"));
-			dto.setPhoneNumber(request.getParameter("pNum"));
+			dto.setPhoneNumber(request.getParameter("phoneNumber"));
 			dto.setGender(request.getParameter("gender"));
 			dto.setMemberTypeId("0");
-			new MemberDAO().insertMember(dto);
 			request.getSession().setAttribute("dto",dto);
 			resp.sendRedirect("../SignUp/SignUp2.jsp");
 		} else {
@@ -36,4 +35,4 @@ public class SignUpController extends HttpServlet {
 		}
 	}
 }
-}
+

@@ -7,7 +7,7 @@
 		  line-height: 1.5;
 
 		}
-
+        
         .nex {
             font-family: "NexonLv1Gothic";
         }
@@ -191,25 +191,6 @@
  		 max-width: 70%; /* 이미지 영역이 차지하는 최대 너비 */
 		  height: auto; /* 이미지 비율 유지 */
 		}
-		.time-select {
-		  position: sticky;
-		  top: 0;
-		  right: 0;
-		  z-index: 1;
-		  background-color: white;
-		}
-		
-		.time-select {
-		  position: sticky;
-		  top: 100px;
-		  float: right;
-		  margin-top: 50px;
-		}
-		
-		.calendar {
-		  position: relative;
-		}
-		
 		.main-view {
 		  width: 78%;
 		}
