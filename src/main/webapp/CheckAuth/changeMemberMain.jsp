@@ -115,35 +115,51 @@
     	<h1>회원 정보 수정</h1>
     </div>
     <div class="form-container" align="center">
-    	<form action="../servlet/UpdateController.do" method="post">
+    	<form>
         	<label scope="row">이메일:</label>
-        	<input type="text" id="email_id" name="email" class="form_w200" value="${dto.email}" title="이메일 아이디" placeholder="이메일" maxlength="18" readonly/>
-			&emsp;<br>
+        	<input type="text" id="email_id" class="form_w200" value="" title="이메일 아이디" placeholder="이메일" maxlength="18" /> @ 
+			<input type="text" id="email_domain" class="form_w200" value="" title="이메일 도메인" placeholder="직접 입력" maxlength="18"/> 
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+			<select class="select" title="이메일 도메인 주소 선택" onclick="setEmailDomain(this.value);return false;" dir=”rtl”>
+		    <option value="">-선택-</option>
+		    <option value="naver.com">naver.com</option>
+		    <option value="gmail.com">gmail.com</option>
+		    <option value="hanmail.net">hanmail.net</option>
+		    <option value="nate.com">nate.com</option>
+		    <option value="yahoo.com">yahoo.com</option>
+		    <option value="kakao.com">kakao.com</option>
+		    </select><br>
         	<label for="name">이름:</label>
-        	<input type="text" id="name" name="memberName" value="${dto.memberName}" ><br>
+        	<input type="text" id="name" name="name" value="" readonly><br>
+        	<label for="socialSecurityNumber">생년월일:</label>
+        	<input type="date" id="socialSecurityNumber" name="socialSecurityNumber" value="" ><br>
         	<label for="password">비밀번호:</label>
-        	<input type="password" id="password" name="password" placeholder="비밀번호" value="${dto.password}"><br>
+        	<input type="password" id="password" name="password" placeholder="비밀번호"><br>
         	<label for="phoneNumber">전화번호:</label>
-			<input type="text" id="phoneNumber" name="phoneNumber" value="${dto.phoneNumber}" placeholder="숫자만 입력해주세요."><br>
+			<input type="text" id="phoneNumber" name="phoneNumber" value="" placeholder="숫자만 입력해주세요."><br>
 			<label for="nickname">닉네임:</label>
-        	<input type="text" id="nickname" name="nickname" value="${dto.nickName}"><br>			
+        	<input type="text" id="nickname" name="nickname" value=""><br>			
 			<div align="center">
 				<p>숙련도</p>
 				<h5>본인의 실력을 선택해주세요.</h5> 
-				<label>상</label>
-   					<input type="radio" name="level" value="상" ${dto.level == '상' ? 'checked' : ''}/>
-  				<label>중</label>
-   					<input type="radio" name="level" value="중" ${dto.level == '중' ? 'checked' : ''}/>
-  				<label>하</label>
-   					<input type="radio" name="level" value="하" ${dto.level == '하' ? 'checked' : ''}/>
+				<label>
+   					<input type="radio" name="level" value="상" />
+   					<span>상</span>
+  				</label>
+  				<label>
+   					<input type="radio" name="level" value="중" />
+   					<span>중</span>
+  				</label>
+  				<label>
+   					<input type="radio" name="level" value="하" />
+   					<span>하</span>
+  				</label>
    			</div>
-   			<input type="submit" value="변경사항 저장"/>
-   		</form>
-	    
-  		<form action="../servlet/DeleteInfoController.do" method="post">
-  			<input type="hidden" name="email" value="${dto.email}">
+   			
 	        <input type="submit" value="회원 탈퇴"/>
-	    </form> 
+	        <input type="submit" value="변경사항 저장"/>	
+	                
+  		</form>
     </div>   
     <div class="bottom">
     	<form>

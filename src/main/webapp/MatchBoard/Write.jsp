@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>자료 게시판</title>
-<link rel="stylesheet" href="css/Board.css" type="text/css">
+<link rel="stylesheet" href="../css/Board.css" type="text/css">
 </head>
 <header id="headerType" class="header__wrap nexon fix">
    <div class="header__inner">
