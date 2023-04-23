@@ -1,0 +1,455 @@
+
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+        html, body {
+		  margin: 0;
+		  padding: 0;
+		  font-family: Arial, sans-serif;
+		  font-size: 16px;
+		  line-height: 1.5;
+
+		}
+        
+        .nex,p {
+            font-family: "NexonLv1Gothic";
+        }
+        .ir_so {
+            overflow: hidden;
+            position: absolute;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+        .container {
+            width: 1160px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {
+            font-size: 50px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            line-height: 1;
+            text-align: center;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            margin-bottom: 70px;
+            line-height: 1.5;
+            color: #777;
+            text-align: center;
+        }
+        .header__wrap {
+		  background-color: rgb(128, 255, 128);
+		  color: #fff;
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+		  right: 0;
+		  z-index: 99;
+		}
+		
+		.header__inner {
+		  display: flex;
+		  align-items: center;
+		  height: 80px;
+		  padding: 0 20px;
+		}
+		
+		.header__logo a {
+		display: flex;
+		  color: #fff;
+		  font-size: 24px;
+		  font-weight: bold;
+		  text-decoration: none;
+		}
+		
+		.header__logo a em {
+		  color: black;
+		}
+		
+		.header__menu ul {
+		  display: flex;
+		  list-style: none;
+		  margin: 20px;
+		  padding: 0;
+		}
+		
+		.header__menu li {
+		  margin-right: 20px;
+		}
+		
+		.header__menu li:last-child {
+		  margin-right: 0;
+		}
+		
+		.header__menu a {
+		  color: #fff;
+		  text-decoration: none;
+		  font-size: 18px;
+		  font-weight: bold;
+		  transition: color 0.2s ease-in-out;
+		}
+		
+		.header__menu a:hover {
+		  color: #ffbb00;
+		}
+		
+		.header__member span {
+		  margin-right: 10px;
+		}
+		
+		.header__member a {
+		  color: #fff;
+		  text-decoration: none;
+		  margin-left: 10px;
+		  padding: 5px 10px;
+		  background-color: #ffbb00;
+		  border-radius: 5px;
+		}
+		
+		.header__member a:hover {
+		  background-color: #fff;
+		  color: #2d2d2d;
+		}
+        
+        .footer__menu {
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer__menu > div {
+            width: 16%;
+            text-align: left;
+        }
+        .footer__menu > div h3 {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        .footer__menu > div li a {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #777;
+            font-weight: 300;
+        }
+        .footer__right {
+            border-top: 1px solid #ccc;
+            margin-top: 50px;
+            padding-top: 50px;
+            text-align: center;
+        }
+        @keyframes scale{
+            0%{transform:scale(1);}
+            100%{transform:scale(0.7);}
+        }
+        #chat {
+ 	 		position: fixed;
+  			bottom: 20px;
+  			right: 20px;
+  			border: none;
+  			border-radius: 16px;
+  			background: royalblue;
+  			color: white;
+  			padding: 12px;
+  			font-weight: bold;
+  			font-size: 20px;
+  			box-shadow: 0px 5px 15px gray;
+  			cursor: pointer;
+		}
+		#chat:active{
+			background-color: blue;
+			animation:scale 2s infinite;
+            animation-direction:alternate;
+		}
+		select {
+			width: 200px; 
+			padding: .8em .5em; 
+			border: 1px solid #999;
+			font-family: inherit;  
+			background: url('arrow.jpg') no-repeat 95% 50%; 
+			border-radius: 0px; 
+			-webkit-appearance: none; 
+			-moz-appearance: none;
+			appearance: none;
+		}
+		button{
+		font-size: 20px; 
+		padding: 10px 20px; 
+		background-color: rgb(128, 255, 128); 
+		border: none; 
+		border-radius: 5px;
+		}
+		.matching{
+			top: 20%;
+			margin: 20px;
+			padding: 5px;
+		}
+		img {
+ 		 max-width: 70%; /* 이미지 영역이 차지하는 최대 너비 */
+		  height: auto; /* 이미지 비율 유지 */
+		}
+		.time-select {
+		  position: sticky;
+		  top: 0;
+		  right: 0;
+		  z-index: 1;
+		  background-color: white;
+		}
+		
+		.time-select {
+		  position: sticky;
+		  top: 100px;
+		  float: right;
+		  margin-top: 50px;
+		}
+		
+		.calendar {
+		  position: relative;
+		}
+		
+		.main-view {
+		  width: 78%;
+		}
+		
+		.main-view ul {
+		  list-style-type: none;
+		  margin: 0;
+		  padding: 0;
+		}
+		
+		.main-view ul li {
+		  display: inline-block;
+		  width: 100%;
+		  height: auto;
+		}
+		.card__wrap {
+		  padding: 20px;
+		}
+		#cancellbtn {
+		display: flex;
+  		justify-content: center;
+ 		 align-items: center;
+		}
+		button[type="submit"]:hover {
+		  color: #fff;
+		}@keyframes scale{
+            0%{transform:scale(1);}
+            100%{transform:scale(0.7);}
+        }
+#chat {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	border: none;
+	border-radius: 16px;
+	background: royalblue;
+	color: white;
+	padding: 12px;
+	font-weight: bold;
+	font-size: 20px;
+	box-shadow: 0px 5px 15px gray;
+	cursor: pointer;
+}
+
+#chat:active {
+	background-color: blue;
+	animation: scale 2s infinite;
+	animation-direction: alternate;
+}
+
+body {
+	background-color: #F3F4F9;
+	margin: 0;
+	padding: 0;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#form-container {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#form-inner-container {
+	background-color: white;
+	max-width: 70%;
+	border-radius: 8px;
+	box-shadow: 0 0 20px gainsboro;
+}
+
+#sign-up-container, #sign-in-container {
+	padding: 60px 80px;
+	width: 320px;
+	display: inline-block;
+	align-items: center;
+}
+
+form input{
+	display: block;
+	margin-bottom: 20px;
+	border: 1px solid #E5E9F5;
+	background-color: #F6F7FA;
+	padding: 20px;
+	margin-top: 10px;
+	border-radius: 10px;
+	width: 100%;
+}
+
+#form-controls {
+	margin-bottom: 20px;
+}
+
+h3 {
+	color: grey;
+	font-size: 150%;
+	font-weight: 500;
+}
+
+label {
+	color: #7369AB;
+}
+
+::placeholder {
+	color: #7369AB;
+	font-size: larger;
+	letter-spacing: 1.2px;
+}
+
+#form-controls button {
+	border: none;
+	font-size: 120%;
+}
+
+#form-controls button:hover {
+	cursor: pointer;
+}
+
+#smbtn{
+	padding: 16px 75px;
+	background-color: grey;
+	border-radius: 10px;
+	color: white;
+	transition: background-color 0.7s;
+}
+
+#smbtn:hover{
+	background-color: green;
+	
+}
+
+#subtn {
+	padding: 16px 0 16px 35px;
+	background-color: transparent;
+	color: #7369AB;
+	transition: color 0.7s;
+}
+#subtn:hover{
+	color:green;
+}
+#form {
+	text-align: center;
+}
+#terms {
+	width: 30px;
+	height: 30px;
+	appearance: none;
+	border: 2px solid #7369AB;
+	border-radius: 4px;
+	position: relative;
+}
+
+#terms:checked:after {
+	content: '\2713';
+	color: #7369AB;
+	font-size: 24px;
+	position: absolute;
+	top: 0;
+	left: 3px;
+}
+
+label[for="terms"] {
+	display: inline-block;
+	width: 80%;
+	margin-left: 10px;
+}
+
+.termsLink {
+	color: red;
+}
+
+.hide {
+	display: none !important;
+}
+
+#LoginLogo {
+	text-align: center;
+}
+
+#animation-container {
+	display: inline-block;
+}
+
+/* responsive display */
+@media ( max-width :1438px) {
+	lottie-player {
+		width: 300px !important;
+	}
+}
+
+@media ( max-width :1124px) {
+	#animation-container {
+		display: none;
+	}
+	#form-inner-container {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+@media ( max-width : 684px) {
+	#form-controls {
+		text-align: center;
+		margin: 0;
+		padding: 0;
+	}
+	button {
+		width: 100%;
+	}
+	form input:not(:last-of-type) {
+		width: 85%;
+	}
+}
+
+.login-btn {
+	border: none;
+	display: inline-block;
+	width: 320px;
+	text-align: center;
+	font-weight: bold;
+	border-radius: 4px;
+	text-decoration: none;
+	padding: 10px 20px;
+	margin-right: 10px;
+	margin-left: 15px;
+	margin-bottom: 5px;
+	text-align: center;
+	border: none;
+	transition: border 0.7s;
+	cursor: pointer;
+}
+.naver {
+	background-color: #70F246;
+	color: rgb(255,255,255);
+	font-weight: bolder;
+}.login-btn:hover{
+	border: 0.1px solid grey;
+}
+
+.login-btn i {
+	margin-right: 5px;
+}

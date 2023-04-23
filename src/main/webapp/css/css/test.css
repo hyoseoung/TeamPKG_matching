@@ -1,0 +1,50 @@
+@charset "UTF-8";.time-select {
+		  display: flex;
+		  flex-direction: column;
+		  justify-content: center;
+		  align-items: center;
+		  padding: 20px;
+		  border: 1px solid #ccc;
+		  border-radius: 5px;
+		  width: 400px;
+		  margin: 20px auto;
+		}
+		
+		.time-select label {
+		  margin-bottom: 10px;
+		}
+		
+		.time-select select {
+		  margin-bottom: 20px;
+		}
+		
+		.time-select .attendees {
+		  display: flex;
+		  flex-direction: row;
+		  justify-content: center;
+		  align-items: center;
+		  margin-bottom: 20px;
+		}
+		
+		.time-select .attendees label {
+		  margin-right: 10px;
+		}
+		
+		.time-select .attendees input[type="number"] {
+		  width: 50px;
+		  text-align: center;
+		}
+		
+		.time-select button[type="submit"] {
+		  padding: 10px 20px;
+		  background-color: #0066cc;
+		  color: #fff;
+		  border: none;
+		  border-radius: 5px;
+		  cursor: pointer;
+		  transition: background-color 0.2s ease;
+		}
+		
+		.time-select button[type="submit"]:hover {
+		  background-color: #0059b3;
+		}	
