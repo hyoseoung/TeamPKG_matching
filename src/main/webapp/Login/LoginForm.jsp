@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../Header/APIHeader.jsp" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>LogIn</title>
-    <link rel="stylesheet" href="../css/LoginPage.css" type="text/css">
+    <link rel="stylesheet" href="../css/LoginPage.css" />
 </head>
 <body>
 	<header id="headerType" class="header__wrap nexon fix">
@@ -29,8 +30,10 @@
             <label for="password">Password</label>
             <input type="password" name="password" placeholder="password"/>
             <div id="form-controls">
-              	<button type="submit" id="Signup">Sign In</button>
-              <button type="button" id="subtn" onclick="location.href='../SignUp/SignUp.jsp';">Sign Up</button>
+              	<button type="submit" id="signIn">Log In</button>
+              	<button type="button" id="subtn" onclick="location.href='../SignUp/SignUp.jsp';">Sign Up</button>
+              	<button type="button" id="findID" onclick="location.href='../Find/FindPwSelect.jsp';">Find ID</button>
+              	<button type="button" id="findPW" onclick="location.href='../Find/FindId.jsp';">Find PW</button>
             </div>
           </form>
           <button onclick="location.href='<%=apiURL%>'" class="login-btn naver">네이버로 로그인</button>
