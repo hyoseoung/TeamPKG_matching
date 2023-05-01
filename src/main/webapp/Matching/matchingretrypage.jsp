@@ -17,7 +17,7 @@
         <nav class="header__menu" style="width: 55%">
             <ul>
                 <li><a href="../Board/List.jsp">Board</a></li>
-                <li><a href="#">Notice Board</a></li>
+                <li><a href="#">Nocitice</a></li>
                 <li><a href="#">Challenger</a></li>
             </ul>
         </nav>
@@ -92,7 +92,7 @@
 <script>
 function remaching() {
 	if (confirm("매칭을 다시 시도하시겠습니까?")) {
-	    window.location.href = "./matchingpage.jsp";
+		window.location.href = "./matchingpage.jsp";
 	}
 }
 function returnpage() {

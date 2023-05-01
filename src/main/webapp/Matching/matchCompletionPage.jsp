@@ -6,13 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>matching 성사 안내 page</title>
-<link rel="stylesheet" href="../css/MatchingComplete.css" type="text/css">
+<link rel="stylesheet" href="css/MatchingComplete.css" type="text/css">
 
 </head>
 <header id="headerType" class="header__wrap nexon fix">
    <div class="header__inner">
         <div class="header__logo">
-            <a href="..Title/TitleMain.jsp">Match <em>Get It!</em></a>
+            <a href="../Title/TitleMain.jsp">Match <em>Get It!</em></a>
         </div>
         <nav class="header__menu" style="width: 55%">
             <ul>
@@ -51,18 +51,24 @@
 			<div class="rightmatchInfo" style="flex-direction: column;border: none;">
 				<img id="teamImg" src="../img/blue.png" alt="이미지 없음">
 				<ul style="list-style: none; text-align: left;">
-					<c:forEach items="${listA}" var="teamA" varStatus="l">
-					<li><c:if test="조건식">${teamA.memberName}</c:if>
-					</c:forEach>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+					<li>6</li>
 				</ul>
 			</div>
 			<h3>vs</h3>
 			<div class="rightmatchInfo" style="flex-direction: column;border: none;">
 				<img id="teamImg" src="../img/red.png" alt="이미지 없음">
 				<ul style="list-style: none; text-align: left;">
-					<c:forEach items="${listB}" var="teamB" varStatus="l">
-					<li>${teamB.memberName}
-					</c:forEach>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+					<li>6</li>
 				</ul>
 			</div>
 		</div>

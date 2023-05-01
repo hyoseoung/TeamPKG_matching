@@ -1,0 +1,274 @@
+
+    @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+    html, body {
+		margin: 0;
+		padding: 0;
+		font-family: Arial, sans-serif;
+		font-size: 16px;
+		line-height: 1.5;
+		text-align: center;
+
+	}
+	#teamImg{
+		height: 30%;
+		width: 0 auto;
+		margin: 10%;
+	}
+	#img {
+		background-size: contain;
+		max-width: 70%;
+		height: auto;
+	}
+	.secondInfo{
+		text-align: center;
+		width: 80%;
+    	margin: 0 auto;
+	}
+	.leftmatchInfo {
+        width: 49.79%;
+        float: left;
+		display: inline-block;
+		text-align: center;
+		border: 1px solid black;
+		height: 400px;
+		border-right: none;
+		border-top : none;
+   	}
+    .rightmatchInfo {
+        width: 49.79%;
+        float: right;
+		text-align: center;
+    	border: 1px solid black;
+    	height: 400px;
+    	border-top : none;
+    	display: flex;
+		justify-content: center; /* 수평 가운데 정렬 */
+		align-items: center; /* 수직 가운데 정렬 */
+    }
+    
+    .matchInfoTop{
+    	border: 1px solid black;
+    	border-bottom: 0.5px solid black;
+    	max-width: 70%;
+    	margin: 0 auto;
+    	
+    }
+		
+	.matchInfo{
+		
+		text-align: center;
+		width: 70%;
+		margin: 0 auto;
+		display: flex;
+		
+	}
+	.leftInfo {
+		text-align: center;
+		border: 1px solid black;
+		max-width:700px;
+		margin-left: 4%;
+		width : 45%;
+		display: inline-block;
+		float: left;
+		height: 700px;
+		margin-bottom: 30px;
+		margin-top: 20px;
+		overflow: scroll;
+		
+	}
+	.rightInfo, .rightInfo2 {
+		text-align: center;
+		border: 1px solid black;
+		max-width:700px;
+		display: inline-block;
+		margin-right: 4%;
+		width : 45%;
+		float: right;
+		margin-bottom: 10px;
+		margin-top: 20px;
+	
+	}
+    .nex {
+        font-family: "NexonLv1Gothic";
+    }
+    .ir_so {
+        overflow: hidden;
+        position: absolute;
+        width: 0;
+        height: 0;
+        line-height: 0;
+        text-indent: -9999px;
+    }
+        .container {
+            width: 1160px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {
+            font-size: 50px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            line-height: 1;
+            text-align: center;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            margin-bottom: 70px;
+            line-height: 1.5;
+            color: #777;
+            text-align: center;
+        }
+        .header__wrap {
+		  background-color: rgb(128, 255, 128);
+		  color: #fff;
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+		  right: 0;
+		  z-index: 99;
+		}
+		
+		.header__inner {
+		  display: flex;
+		  justify-content: space-between;
+		  align-items: center;
+		  height: 80px;
+		  padding: 0 20px;
+		}
+		
+		.header__logo a {
+		
+		  color: #fff;
+		  font-size: 24px;
+		  font-weight: bold;
+		  text-decoration: none;
+		}
+		
+		.header__logo a em {
+		  color: black;
+		}
+		
+		.header__menu ul {
+		  display: flex;
+		  list-style: none;
+		  margin: 0;
+		  padding: 0;
+		}
+		
+		.header__menu li {
+		  margin-right: 20px;
+		}
+		
+		.header__menu li:last-child {
+		  margin-right: 0;
+		}
+		
+		.header__menu a {
+		  color: #fff;
+		  text-decoration: none;
+		  font-size: 18px;
+		  font-weight: bold;
+		  transition: color 0.2s ease-in-out;
+		}
+		
+		.header__menu a:hover {
+		  color: #ffbb00;
+		}
+		
+		.header__member span {
+		  margin-right: 10px;
+		}
+		
+		.header__member a {
+		  color: #fff;
+		  text-decoration: none;
+		  margin-left: 10px;
+		  padding: 5px 10px;
+		  background-color: #ffbb00;
+		  border-radius: 5px;
+		}
+		
+		.header__member a:hover {
+		  background-color: #fff;
+		  color: #2d2d2d;
+		}
+        
+        .footer__menu {
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer__menu > div {
+            width: 16%;
+            text-align: left;
+        }
+        .footer__menu > div h3 {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        .footer__menu > div li a {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #777;
+            font-weight: 300;
+        }
+        .footer__right {
+            border-top: 1px solid #ccc;
+            margin-top: 50px;
+            padding-top: 50px;
+            text-align: center;
+    }
+
+    #chat {
+ 	 	position: fixed;
+  		bottom: 20px;
+  		right: 20px;
+  		border: none;
+  		border-radius: 16px;
+  		background: royalblue;
+  		color: white;
+  		padding: 12px;
+  		font-weight: bold;
+  		font-size: 20px;
+  		box-shadow: 0px 5px 15px gray;
+  		cursor: pointer;
+	}
+	#chat:active{
+		background-color: blue;
+		animation:scale 2s infinite;
+        animation-direction:alternate;
+	}
+    div{
+		font-family: "NexonLv1Gothic";
+		line-height: 30px;
+	}
+	botton:hover {
+		transition: 0.7s;
+		background-color:#002ead;
+		
+	}
+	#button{
+		border: 1px solid green;
+		background-color: rgba(0,0,0,0);
+		color: green;
+		padding: 3px;
+		margin-left: 15px;
+	}
+	#button:hover {
+		background-color: rgba(0,200,0,0.5);
+		box-shadow: 0px 0px 0.5px 0.5px rgb(0,0,0);
+	}
+	#button:active {
+      transform: scale(0.98);
+      box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    }
+    #p7 {
+    word-break:break-all;
+    }
+
+			
+	

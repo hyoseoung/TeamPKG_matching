@@ -16,7 +16,7 @@
         <nav class="header__menu" style="width: 55%">
             <ul>
                 <li><a href="../Board/List.jsp">Board</a></li>
-                <li><a href="#">Notice Board</a></li>
+                <li><a href="#">Nocitice</a></li>
                 <li><a href="#">Challenger</a></li>
             </ul>
         </nav>
@@ -27,6 +27,9 @@
 		</div>
 	</div>
 </header>
+		<p align="center">현재매칭중인 팀원수: <%= request.getAttribute("teamCount") %></p>
+
+
 	<main>
 		<!-- 중앙에 큰 원안에 이미지 삽입 -->
 		<div style="text-align: center;">
