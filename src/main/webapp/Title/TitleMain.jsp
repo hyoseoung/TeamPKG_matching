@@ -8,7 +8,7 @@
  <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1859d1a3cc07166365149da03346b54c&libraries=services"></script>
 <meta charset="UTF-8">
 	<title>매칭 서비스</title>
-	<link rel="stylesheet" href="../css/TitleMain.css" type="text/css">
+	<link rel="stylesheet" href="css/MainPage.css" type="text/css">
 <style type="text/css">
 	.main-view{
 		margin:  auto;
@@ -50,9 +50,11 @@
 		text-align: right;border-bottom-right-radius: 5px;
 		}
 </style>
- </head>
+
+
+</head>
 <body>
-<form action="../Title/Title.do" method="get">
+<form action ="../Title/Title.do" method="get">
 <header id="headerType" class="header__wrap nexon fix">
 	<div class="header__inner">
         <div class="header__logo">
@@ -61,11 +63,12 @@
         <nav class="header__menu" style="width: 55%">
             <ul>
                 <li><a href="../Board/List.jsp">Board</a></li>
-                <li><a href="#">Notice Board</a></li>
+                <li><a href="#">Nocitice</a></li>
+                <li><a href="#">Challenger</a></li>
             </ul>
         </nav>
 		<div class="header__member">
-			<c:if test="${empty dto}" >
+			<c:if test="${empty dto and empty admin}" >
 			<span>로그인이 필요합니다</span>
 	    		<a id="login_btn" href="../Login/LoginForm.jsp">로그인</a>
 	    		<a id="login_btn" href="../SignUp/SignUp.jsp">회원가입</a>
@@ -74,6 +77,11 @@
 	    		<span>${dto.memberName}님</span>
 	    		<a href="../Logout/LogoutController.do">로그아웃</a>
 	    		<a href="../CheckAuth/changeMemberckeck.jsp">개인정보 변경</a>
+	    	</c:if>	
+	    	<c:if test="${not empty admin}">
+	    		<span>${admin.memberName}님</span>
+	    		<a href="../Logout/LogoutController.do">로그아웃</a>
+	    		<a href="../MatchGetIt/AdminPage.do">관리자 페이지</a>
 	    	</c:if>	
 		</div>
 	</div>
@@ -102,11 +110,13 @@
 					<option value="E">오후 6시~오후 8시</option>
 					<option value="F">오후 8시~오후 10시</option>
 				</select>
+				
+				<p id="selected-time"></p>
 			<input type="text" id="address" readonly required/>
 			<input type="hidden" id="lat" name="x"/>
 			<input type="hidden" id="lon" name="y"/>
 			<button type="button" id="point" onclick="addrfunc()">주소 검색</button>
-			
+
 			<button type="submit">매칭</button>
 	        </div>
 	       <div class="main-view">
@@ -161,14 +171,12 @@
             </address>
         </div>
     </footer>
-</form>
-<script>
+	<script>
 var geocoder = new daum.maps.services.Geocoder();
     function addrfunc() {
         new daum.Postcode({
             oncomplete: function(data) {
                 var addr = data.address; // 최종 주소 변수
-
                 // 주소로 상세 정보를 검색
                 geocoder.addressSearch(data.address, function(results, status) {
                     // 정상적으로 검색이 완료됐으면
@@ -184,5 +192,6 @@ var geocoder = new daum.maps.services.Geocoder();
         }).open();
     }
 </script>
+</form>
 </body>
 </html>
