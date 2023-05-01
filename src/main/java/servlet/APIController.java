@@ -52,7 +52,7 @@ public class APIController extends HttpServlet {
 		}
 		else {
 			req.getSession().setAttribute("dto",dto);			
-			AlertFunction.alertLocation(resp, dto.getMemberName()+"님 환영합니다", "../Matching/matchingwaitpage.jsp");
+			AlertFunction.alertLocation(resp, dto.getMemberName()+"님 환영합니다", "../Title/TitleMain.jsp");
 		}
 	}
 
