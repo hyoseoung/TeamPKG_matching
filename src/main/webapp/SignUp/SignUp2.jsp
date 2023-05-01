@@ -44,11 +44,27 @@
        display: inline-block;
     }
 </style>
+<link rel="stylesheet" href="css/MainPage.css" type="text/css">
 </head>
 <body>
+<header id="headerType" class="header__wrap nexon fix">
+	<div class="header__inner">
+        <div class="header__logo">
+            <a href="#">Match <em>Get It!</em></a>
+        </div>
+        <nav class="header__menu" style="width: 55%">
+            <ul>
+                <li><a href="../Board/List.jsp">Board</a></li>
+                <li><a href="#">Nocitice</a></li>
+                <li><a href="#">Challenger</a></li>
+            </ul>
+        </nav>
+	</div>
+</header>
    <form action="../SignUp/FinalSignUpController.do" method="get">
-      <h2>Sign Up</h2>
-      <h1 align="center" style="background-color: #ADFF2F;">상세 정보 입력</h1> <br>
+      <h2>Sign Up</h2><br>
+
+      <h1 align="center">상세 정보 입력</h1> <br>
       <div align="center">
              <p>숙련도</p>
             <h5>본인의 실력을 선택해주세요.</h5> 
@@ -72,6 +88,7 @@
    </div>
    </form>
 </body>
+
 </html>
 
 
