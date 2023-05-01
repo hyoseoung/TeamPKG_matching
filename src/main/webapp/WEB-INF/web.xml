@@ -14,18 +14,8 @@
 	  <param-name>Oracle</param-name>
 	  <param-value></param-value>
   </context-param>
-  <context-param>
-   	<param-name>maxPostSize</param-name>
-   	<param-value>1024000</param-value>
-  </context-param>
-  <context-param>
-  <param-name>PAGE_SIZE</param-name>
-  	<param-value>10</param-value>
-  </context-param>
-    <context-param>
-  	<param-name>PAGING_BLOCK</param-name>
-  	<param-value>5</param-value>
-  </context-param>
+  
+  
   <!-- request 인코딩 설정 -->
   <filter>
   	<filter-name>SetCharEncoding</filter-name>
